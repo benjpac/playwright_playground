@@ -1,10 +1,12 @@
-import type { Page } from '@playwright/test';
+import type { Page, Locator } from '@playwright/test';
 
 export class HomePage {
-  private page: Page;
+  readonly page: Page;
+  readonly novaNavButton: Locator;
 
   constructor(page: Page) {
     this.page = page;
+    this.novaNavButton = page.locator('#menu-primary-navigation #menu-item-360', { hasText: 'Nova'});
   }
 
   async open() {
@@ -21,7 +23,12 @@ export class HomePage {
 
   async getMenuPrimaryNavElementAllInnerTexts() {
     const menuLocator = await this.getMenuPrimaryNavElement();
-    return menuLocator.allInnerTexts();
+    return await menuLocator.allInnerTexts();
+  }
+
+  async getNovaNavElement() {
+    const menuLocator = await this.getMenuPrimaryNavElement()
+    return await menuLocator.locator('#menu-item-360');
   }
 
 }
