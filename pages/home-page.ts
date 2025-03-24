@@ -15,17 +15,13 @@ export class HomePage {
     return await this.page.title();
   }
 
-  async getHeaderButtonText() {
-    return await this.page.textContent('[id^="menu-item"]');
+  async getMenuPrimaryNavElement() {
+    return await this.page.locator('#menu-primary-navigation')
   }
 
-  async getAllChildTextContentOfMenu(): Promise<string[]> {
-    const elements = this.page.locator('#menu-primary-navigation').locator('*'); // Select all child elements
-    const count = await elements.count();
-    const textContents: string[] = [];
-    for (let i = 0; i < count; i++) {
-      textContents.push(await elements.nth(i).textContent() || '');
-    }
-    return textContents;
+  async getMenuPrimaryNavElementAllInnerTexts() {
+    const menuLocator = await this.getMenuPrimaryNavElement();
+    return menuLocator.allInnerTexts();
   }
+
 }
