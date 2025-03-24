@@ -8,14 +8,13 @@ test('Home page should have correct title', async ({ page }) => {
     expect(await homePage.getTitle()).toBe('Stoke Space / 100% reusable rockets / USA');
 });
 
-// fails webkit. not sure why
+// this isn't a good way to write this test, but I thought it's interesting that only fails on webkit. some formatting issue after "SHOP"
 test('Home page should have correct header button text', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.open();
     const headerButtonArray = await homePage.getMenuPrimaryNavElementAllInnerTexts();
     console.log(headerButtonArray);
-    expect(headerButtonArray).toEqual(expect.arrayContaining(['NOVA\nTEAM\nCAREERS\nNEWS\nFUSION BY STOKE SPACE\nSHOP'
-    ]));
+    expect(headerButtonArray).toEqual(expect.arrayContaining(['NOVA\nTEAM\nCAREERS\nNEWS\nFUSION BY STOKE SPACE\nSHOP']));
 });
 
 // better way to test header button text
