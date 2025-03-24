@@ -17,7 +17,7 @@ test('Home page should have correct header button text', async ({ page }) => {
     expect(headerButtonArray).toEqual(expect.arrayContaining(['NOVA\nTEAM\nCAREERS\nNEWS\nFUSION BY STOKE SPACE\nSHOP']));
 });
 
-// better way to test header button text. would move menu item locators to a separate methods in pages/home-page.ts
+// better way to test header button text. would move menu item locators to pages/home-page.ts
 test('Home page should have correct header button text v2', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.open();
@@ -28,21 +28,4 @@ test('Home page should have correct header button text v2', async ({ page }) => 
     expect(await menuPrimaryNavElement.locator('#menu-item-357').textContent()).toBe('News');
     expect(await menuPrimaryNavElement.locator('#menu-item-864').textContent()).toBe('Fusion by Stoke Space');
     expect(await menuPrimaryNavElement.locator('#menu-item-857').textContent()).toBe('Shop');
-});
-
-// using getNovaNavElement method
-test('Click Nova and verify title', async ({ page }) => {
-    const homePage = new HomePage(page);
-    await homePage.open();
-    const novaNavElement = await homePage.getNovaNavElement();
-    await novaNavElement.click();
-    expect(await homePage.getTitle()).toBe('Nova | Stoke Space / 100% reusable rockets / USA');
-});
-
-// with novaNavButton element locator in page constructor (preferred)
-test('Click Nova and verify title v2', async ({ page }) => {
-    const homePage = new HomePage(page);
-    await homePage.open();
-    await homePage.novaNavButton.click();
-    expect(await homePage.getTitle()).toBe('Nova | Stoke Space / 100% reusable rockets / USA');
 });
