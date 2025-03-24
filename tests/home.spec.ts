@@ -30,6 +30,7 @@ test('Home page should have correct header button text v2', async ({ page }) => 
     expect(await menuPrimaryNavElement.locator('#menu-item-857').textContent()).toBe('Shop');
 });
 
+// using getNovaNavElement method
 test('Click Nova and verify title', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.open();
@@ -38,8 +39,8 @@ test('Click Nova and verify title', async ({ page }) => {
     expect(await homePage.getTitle()).toBe('Nova | Stoke Space / 100% reusable rockets / USA');
 });
 
-// with novaNavButton locator in constructor
-test.only('Click Nova and verify title v2', async ({ page }) => {
+// with novaNavButton element locator in page constructor (preferred)
+test('Click Nova and verify title v2', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.open();
     await homePage.novaNavButton.click();
