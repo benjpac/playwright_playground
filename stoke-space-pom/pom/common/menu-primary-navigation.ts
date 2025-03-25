@@ -1,6 +1,6 @@
 import type { Page, Locator } from '@playwright/test';
 
-export class menuPrimaryNavigation {
+export class MenuPrimaryNavigation {
     readonly page: Page;
     readonly nova: Locator;
     readonly team: Locator;
