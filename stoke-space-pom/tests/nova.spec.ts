@@ -6,12 +6,16 @@ test.beforeEach(async ({ menuPrimaryNavigation, homePage }) => {
 })
 
 test('Click Nova and verify title', async ({ page }) => {
-    expect(await page.title()).toBe('Nova | Stoke Space / 100% reusable rockets / USA');
+    await expect(page.title()).toBe('Nova | Stoke Space / 100% reusable rockets / USA');
 });
 
 test.describe('Downmass Features', () => {
-    test.only('Hover behavior', async ({ novaPage }) => {
+    test('Text content', async ({ novaPage }) => {
+        await expect(novaPage.downmassFeatures).toHaveText('Downmass Features')
+    })    
+    test('Hover behavior', async ({ novaPage }) => {
+        await expect(novaPage.downmassFeatures).toHaveCSS('color', 'rgb(44, 171, 226)');
         await novaPage.downmassFeatures.hover();
-        expect(await novaPage.downmassFeatures.textContent()).toBe('Downmass Features');
+        await expect(novaPage.downmassFeatures).toHaveCSS('color', 'rgb(255, 255, 255)');
     })
 })
