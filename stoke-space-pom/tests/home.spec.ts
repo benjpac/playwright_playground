@@ -5,7 +5,7 @@ test.beforeEach(async ({ homePage }) => {
 });
 
 test('Home page should have correct title', async ({ page }) => {
-    await expect(page.title()).toBe('Stoke Space / 100% reusable rockets / USA');
+    await expect(await page.title()).toBe('Stoke Space / 100% reusable rockets / USA');
 });
 
 // this isn't a good way to write this test, but I thought it's interesting that only fails on webkit. some formatting issue after "SHOP"
@@ -18,7 +18,7 @@ test.skip('Home page should have correct header button text (BAD EXAMPLE)', asyn
 });
 
 test('Home page should have correct header button text', async ({ menuPrimaryNavigation }) => {
-    await expect(menuPrimaryNavigation.nova).toHaveText('Nova');
+    expect(menuPrimaryNavigation.nova).toHaveText('Nova');
     await expect(menuPrimaryNavigation.team).toHaveText('Team');
     await expect(menuPrimaryNavigation.careers).toHaveText('Careers');
     await expect(menuPrimaryNavigation.news).toHaveText('News');

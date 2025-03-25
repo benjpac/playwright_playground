@@ -6,7 +6,7 @@ test.beforeEach(async ({ menuPrimaryNavigation, homePage }) => {
 })
 
 test('Click Nova and verify title', async ({ page }) => {
-    await expect(page.title()).toBe('Nova | Stoke Space / 100% reusable rockets / USA');
+    await expect(await page.title()).toBe('Nova | Stoke Space / 100% reusable rockets / USA');
 });
 
 test.describe('Downmass Features', () => {
