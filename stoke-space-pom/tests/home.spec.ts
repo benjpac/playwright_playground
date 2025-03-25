@@ -1,6 +1,6 @@
-import { test, expect } from '../base.ts';
+import { test, expect } from '../pom/base.ts';
 
-test.only('Home page should have correct title', async ({ homePage }) => {
+test('Home page should have correct title', async ({ homePage }) => {
     await homePage.open();
     expect(await homePage.getTitle()).toBe('Stoke Space / 100% reusable rockets / USA');
 });

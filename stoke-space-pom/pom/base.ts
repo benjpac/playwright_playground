@@ -1,5 +1,6 @@
 import { test as base } from '@playwright/test';
-import { HomePage, NovaPage } from './pom/pages';
+import { HomePage } from './pages/home-page';
+import { NovaPage } from './pages/nova-page';
 
 type MyFixtures = {
     homePage: HomePage;

@@ -1,4 +1,4 @@
-import { test, expect } from '../base.ts';
+import { test, expect } from '../pom/base.ts';
 
 // using getNovaNavElement method
 test('Click Nova and verify title', async ({ homePage }) => {
