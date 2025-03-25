@@ -1,6 +1,5 @@
 import type { Page, Locator } from '@playwright/test';
 
-// Realized there's not really a home page to return to (unless you use the back button in the browser), so I'm repurposing this class for common elements
 export class HomePage {
   readonly page: Page;
   readonly novaNavButton: Locator;

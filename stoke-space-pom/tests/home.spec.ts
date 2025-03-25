@@ -14,13 +14,12 @@ test('Home page should have correct header button text', async ({ homePage }) =>
 });
 
 // better way to test header button text. would move menu item locators to pages/home-page.ts
-test('Home page should have correct header button text v2', async ({ homePage }) => {
+test('Home page should have correct header button text v2', async ({ menuPrimaryNavigation, homePage }) => {
     await homePage.open();
-    const menuPrimaryNavElement = await homePage.getMenuPrimaryNavElement();
-    expect(await menuPrimaryNavElement.locator('#menu-item-360').textContent()).toBe('Nova');
-    expect(await menuPrimaryNavElement.locator('#menu-item-361').textContent()).toBe('Team');
-    expect(await menuPrimaryNavElement.locator('#menu-item-358').textContent()).toBe('Careers');
-    expect(await menuPrimaryNavElement.locator('#menu-item-357').textContent()).toBe('News');
-    expect(await menuPrimaryNavElement.locator('#menu-item-864').textContent()).toBe('Fusion by Stoke Space');
-    expect(await menuPrimaryNavElement.locator('#menu-item-857').textContent()).toBe('Shop');
+    expect(await menuPrimaryNavigation.nova.textContent()).toBe('Nova');
+    expect(await menuPrimaryNavigation.team.textContent()).toBe('Team');
+    expect(await menuPrimaryNavigation.careers.textContent()).toBe('Careers');
+    expect(await menuPrimaryNavigation.news.textContent()).toBe('News');
+    expect(await menuPrimaryNavigation.fusion.textContent()).toBe('Fusion by Stoke Space');
+    expect(await menuPrimaryNavigation.shop.textContent()).toBe('Shop');
 });
