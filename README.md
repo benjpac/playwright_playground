@@ -14,3 +14,7 @@ Narrow down inconsistency with await on certain assertions. await expect() vs ex
 ### dynamic-table.spec.ts 
 
 Messed with playwright vscode extension and 'record new' feature. Very cool! Because it is a dynamically sized table, the toMatchAriaSnapshot assertion fails due to mismatched size when recording.
+
+### verify-account.spec.ts
+
+More playright vscode extension fun. Test explorer gives great control on running tests in various modes (run, debug, and continuous which I have not tested yet)
