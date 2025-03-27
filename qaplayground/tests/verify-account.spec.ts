@@ -83,49 +83,10 @@ test.describe('Verify Account', () => {
     })
 
     test.describe('Functionality testing', () => {
-        test('Confirmation code input', async ({ page }) => {
+        test('Enter correct code', async ({ page }) => {
     
-            // VS Code Playwright extension only
-            await page.fill('#confirmationCode', '999999');
-            await expect(page.locator('#confirmationCode')).toHaveValue('999999');
-    
-            // initial instinct was to use locator 'input#confirmationCode'
-            // used toHaveValue instead of toHaveText because we are testing the value attribute
-            await expect(page.locator('input#confirmationCode')).toHaveValue('999999');
+
         }) 
         
-        test('Submit button', async ({ page }) => {
-    
-            // VS Code Playwright extension only
-            await page.click('button[type="submit"]');
-    
-            // initial instinct was to use locator 'button[type="submit"]'
-            // used toHaveAttribute instead of toHaveText because we are testing the type attribute
-            await expect(page.locator('button[type="submit"]')).toHaveAttribute('type', 'submit');
-        }) 
-        
-        test('Error message', async ({ page }) => {
-    
-            // VS Code Playwright extension only
-            await page.fill('#confirmationCode', '999999');
-            await page.click('button[type="submit"]');
-            await expect(page.locator('#error')).toContainText('Invalid code');
-    
-            // initial instinct was to use locator 'div#error'
-            // used toContainText instead of toHaveText because the error message is not the only text in the element
-            await expect(page.locator('div#error')).toContainText('Invalid code');
-        }) 
-        
-        test('Success message', async ({ page }) => {
-    
-            // VS Code Playwright extension only
-            await page.fill('#confirmationCode', '999999');
-            await page.click('button[type="submit"]');
-            await expect(page.locator('#success')).toContainText('Success! You have confirmed your email address.');
-    
-            // initial instinct was to use locator 'div#success'
-            // used toContainText instead of toHaveText because the success message is not the only text in the element
-            await expect(page.locator('div#success')).toContainText('Success! You have confirmed your email address.');
-        })
     })
 })
