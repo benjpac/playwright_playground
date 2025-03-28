@@ -18,3 +18,10 @@ Messed with playwright vscode extension and 'record new' feature. Very cool! Bec
 ### verify-account.spec.ts
 
 More playright vscode extension fun. Test explorer gives great control on running tests in various modes (run, debug, and continuous which I have not tested yet)
+
+Realized that success page requires keyboard event to trigger success page. 
+fill() just adds the value. 
+type() works.
+press() works.
+
+Test recorder feature kind of sucks. I end up spending more time debugging code I wouldn't have written in the first place. I do learn things in the process, so it's still somewhat useful from an educational standpoint. 

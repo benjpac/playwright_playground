@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+ import { test, expect } from '@playwright/test';
 
 
 test.describe('Verify Account', () => {
@@ -83,10 +83,132 @@ test.describe('Verify Account', () => {
     })
 
     test.describe('Functionality testing', () => {
-        test('Enter correct code', async ({ page }) => {
-    
+        test.skip('Enter correct code using fill()', async ({ page }) => {
+
+            // VS Code Playwright extension only v1
+            // why does the recorder use locator('.code').first() instead of locator('input:nth-child(1)') when the DOM is consistent?
+            await page.locator('.code').first().fill('9');
+            await page.locator('input:nth-child(2)').fill('9');
+            await page.locator('input:nth-child(3)').fill('9');
+            await page.locator('input:nth-child(4)').fill('9');
+            await page.locator('input:nth-child(5)').fill('9');
+            await page.locator('input:nth-child(6)').fill('9');
+            // never makes it to the success page (chrome, firefox, webkit), despite this reproducing that page using manual test steps
+            await expect(page.getByText('Success')).toBeVisible();
+            await expect(page.locator('small')).toContainText('Success');
+
+            // VS Code Playwright extension only v2
+            // added page loading visibility assertions just in case, but the test still fails on 'success' assertion
+            await expect(page.locator('.code').first()).toBeVisible();
+            await expect(page.getByRole('heading', { name: 'Verify Your Account' })).toBeVisible();
+            await page.locator('.code').first().click();
+            await page.locator('.code').first().fill('9');
+            await page.locator('input:nth-child(2)').fill('9');
+            await page.locator('input:nth-child(3)').fill('9');
+            await page.locator('input:nth-child(4)').fill('9');
+            await page.locator('input:nth-child(5)').fill('9');
+            await page.locator('input:nth-child(6)').fill('9');
+            // same issue. never makes it to the success page
+            await expect(page.locator('small')).toContainText('Success');   
+            
+            // Added value assertions to see if the inputs are being filled correctly and look for .success class which is unique to sucesss page, but still fails on 'success' assertion
+            await page.locator('input:nth-child(1)').fill('9')
+            await expect(page.locator('input:nth-child(1)')).toHaveValue('9');
+            await page.locator('input:nth-child(2)').fill('9')
+            await expect(page.locator('input:nth-child(2)')).toHaveValue('9');
+            await page.locator('input:nth-child(3)').fill('9')
+            await expect(page.locator('input:nth-child(3)')).toHaveValue('9');
+            await page.locator('input:nth-child(4)').fill('9')
+            await expect(page.locator('input:nth-child(4)')).toHaveValue('9');
+            await page.locator('input:nth-child(5)').fill('9')
+            await expect(page.locator('input:nth-child(5)')).toHaveValue('9');
+            await page.locator('input:nth-child(6)').fill('9')
+            await expect(page.locator('input:nth-child(6)')).toHaveValue('9');
+            // same issue even with unique class locator
+            // nth-child(6).fill('9') doesn't seem to trigger the success page
+            await expect(page.locator('.success')).toBeVisible(); 
+            
+            // Added value assertions to see if the inputs are being filled correctly and look for .success class which is unique to sucesss page, but still fails on 'success' assertion
+            await page.locator('input:nth-child(1)').fill('9')
+            await expect(page.locator('input:nth-child(1)')).toHaveValue('9');
+            await page.locator('input:nth-child(2)').fill('9')
+            await expect(page.locator('input:nth-child(2)')).toHaveValue('9');
+            await page.locator('input:nth-child(3)').fill('9')
+            await expect(page.locator('input:nth-child(3)')).toHaveValue('9');
+            await page.locator('input:nth-child(4)').fill('9')
+            await expect(page.locator('input:nth-child(4)')).toHaveValue('9');
+            await page.locator('input:nth-child(5)').fill('9')
+            await expect(page.locator('input:nth-child(5)')).toHaveValue('9');
+            await page.locator('input:nth-child(6)').fill('9')
+            await expect(page.locator('input:nth-child(6)')).toHaveValue('9');
+            // fails on 'success' assertion, even with unique class locator
+            await expect(page.locator('.success')).toBeVisible();         
 
         }) 
+
+        test('Enter correct code using type()', async ({ page }) => {
+            
+            // Test passes using deprecated type() instead of fill()
+            // https://playwright.dev/docs/api/class-keyboard#keyboard-type 
+            // "In most cases, you should use locator.fill() instead. You only need to press keys one by one if there is special keyboard handling on the page - in this case use locator.pressSequentially()."    
+                
+            await page.locator('input:nth-child(1)').type('9')
+            await expect(page.locator('input:nth-child(1)')).toHaveValue('9');
+            await page.locator('input:nth-child(2)').type('9')
+            await expect(page.locator('input:nth-child(2)')).toHaveValue('9');
+            await page.locator('input:nth-child(3)').type('9')
+            await expect(page.locator('input:nth-child(3)')).toHaveValue('9');
+            await page.locator('input:nth-child(4)').type('9')
+            await expect(page.locator('input:nth-child(4)')).toHaveValue('9');
+            await page.locator('input:nth-child(5)').type('9')
+            await expect(page.locator('input:nth-child(5)')).toHaveValue('9');
+            await page.locator('input:nth-child(6)').type('9')
+            await expect(page.locator('input:nth-child(6)')).toHaveValue('9');
+            // best success assert I came up with since it covers class change and exact text match
+            await expect(page.locator('.success')).toHaveText('Success');
+
+            // clean up test using a loop
+            const codeInputs = await page.locator('.code')
+            for (let i = 0; i < 6; i++) {
+                await codeInputs.nth(i).type('9');
+                await expect(codeInputs.nth(i)).toHaveValue('9');
+            }
+            await expect(page.locator('.success')).toHaveText('Success');
+            
+        })  
+
+        test('Enter correct code using type() using loop', async ({ page }) => {
+            
+            const codeInputs = await page.locator('.code')
+            for (let i = 0; i < 6; i++) {
+                await codeInputs.nth(i).type('9');
+                await expect(codeInputs.nth(i)).toHaveValue('9');
+            }
+            await expect(page.locator('.success')).toHaveText('Success');
+            
+        })     
+        
+        test('Enter correct code using single type() command', async ({ page }) => {
+
+            // fails without delay
+            await page.keyboard.type('999999', { delay: 100 });
+            const codeInputs = await page.locator('.code')
+            for (let i = 0; i < 6; i++) {
+                await expect(codeInputs.nth(i)).toHaveValue('9');
+            }
+            await expect(page.locator('.success')).toHaveText('Success');
+        })           
+        
+        test('Enter correct code using keyboard.press()', async ({ page }) => {
+
+            // fails without delay
+            const codeInputs = await page.locator('.code')
+            for (let i = 0; i < 6; i++) {
+                await page.keyboard.press('9', { delay: 100 });
+                await expect(codeInputs.nth(i)).toHaveValue('9');
+            }
+            await expect(page.locator('.success')).toHaveText('Success');
+        })      
         
     })
 })
