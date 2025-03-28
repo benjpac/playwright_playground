@@ -166,15 +166,6 @@ test.describe('Verify Account', () => {
             await expect(page.locator('input:nth-child(6)')).toHaveValue('9');
             // best success assert I came up with since it covers class change and exact text match
             await expect(page.locator('.success')).toHaveText('Success');
-
-            // clean up test using a loop
-            const codeInputs = await page.locator('.code')
-            for (let i = 0; i < 6; i++) {
-                await codeInputs.nth(i).type('9');
-                await expect(codeInputs.nth(i)).toHaveValue('9');
-            }
-            await expect(page.locator('.success')).toHaveText('Success');
-            
         })  
 
         test('Enter correct code using type() using loop', async ({ page }) => {
