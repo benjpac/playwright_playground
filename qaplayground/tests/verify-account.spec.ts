@@ -83,7 +83,7 @@ test.describe('Verify Account', () => {
     })
 
     test.describe('Functionality testing', () => {
-        test.skip('Enter correct code using fill()', async ({ page }) => {
+        test.fail('Enter correct code using fill()', async ({ page }) => {
 
             // VS Code Playwright extension only v1
             // why does the recorder use locator('.code').first() instead of locator('input:nth-child(1)') when the DOM is consistent?
