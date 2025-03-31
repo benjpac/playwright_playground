@@ -14,14 +14,12 @@ test('has title', async ({ page }) => {
   await expect(page.getByRole('button', { name: 'Switch between dark and light' })).toBeVisible();
 
   await expect(page.getByLabel('Breadcrumbs').getByText('Fusion')).toBeVisible();
-
   await expect(page.getByRole('heading', { name: 'Fusion' })).toBeVisible();
   await expect(page.getByText('Walk through the most')).toBeVisible();
   await expect(page.locator('header')).toMatchAriaSnapshot(`
     - heading "Fusion" [level=1]
     - paragraph: Walk through the most important concepts in Fusion to get started on your first build fast.
     `);  
-
   await expect(page.getByRole('link', { name: '🗃️ Parts 5 items' })).toBeVisible();
   await expect(page.getByRole('link', { name: '🗃️ Inventory 6 items' })).toBeVisible();
   await expect(page.getByRole('link', { name: '🗃️ Workflows 6 items' })).toBeVisible();
