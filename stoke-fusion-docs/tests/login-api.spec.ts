@@ -12,7 +12,10 @@ test.describe('Login Page API', () => {
     //     await page.goto('/');
     // }),
 
-    test.only('404 on app-build-manifest.json', async ({ request }) => {
+    // TDD (Test Driven Development) test case
+    // 404 happens on live https://app.stokefusion.com page load
+    // change expected status when the issue is fixed
+    test('404 on app-build-manifest.json', async ({ request }) => {
         const response = await request.get(`/_next/app-build-manifest.json`)
         expect(response.status()).toBe(404);
     })
