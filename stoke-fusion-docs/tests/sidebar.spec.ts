@@ -6,13 +6,16 @@ test.describe('Sidebar Tests', () => {
         await base.navigate('/help/category/fusion/index.html');
     });
     
-    test('page has title', async ({ page }) => {
+    test.only('page has title', async ({ page }) => {
+        const title = await page.title();
+        console.log('Title:', title);
         await expect(page).toHaveTitle('Fusion | Fusion Docs');
+        await expect(await page.title()).toBe('Fusion | Fusion Docs');
     });
     
-    // returns 'Fusion Docs' instead of 'Fusion | Fusion Docs'
-    // title is 'Fusion | Fusion Docs' when ran in UI mode. page load race condition?
-    test.fixme('base getTitle()', async ({ base }) => {
+    test('base getTitle()', async ({ base }) => {
+        const title = await base.getTitle();
+        console.log('Title:', title);
         await expect(await base.getTitle()).toBe('Fusion | Fusion Docs');
     });
 
