@@ -45,12 +45,6 @@ https://app.stokefusion.com/
 Use this link to bypass login:
 https://app.stokefusion.com/help/category/fusion/index.html
 
-This passes:
-```
-await expect(page).toHaveTitle('Fusion | Fusion Docs');
-await expect(await page.title()).toBe('Fusion | Fusion Docs');
-```
-The assertion is retried until the page has the full title.
 
 This fails:
 ```
@@ -58,3 +52,11 @@ await expect(await page.title()).toBe('Fusion | Fusion Docs');
 await expect(page).toHaveTitle('Fusion | Fusion Docs')
 ```
 page.title() returns "Fusion Docs" before the page is done loading. Retrying assert on string "Fusion Docs" toBe "Fusion | Fusion Docs" will always fail.
+
+
+This passes:
+```
+await expect(page).toHaveTitle('Fusion | Fusion Docs');
+await expect(await page.title()).toBe('Fusion | Fusion Docs');
+```
+The assertion is retried until page returns 'Fusion | Fusion Docs'.
