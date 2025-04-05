@@ -59,4 +59,4 @@ This passes:
 await expect(page).toHaveTitle('Fusion | Fusion Docs');
 await expect(await page.title()).toBe('Fusion | Fusion Docs');
 ```
-The assertion is retried until page returns 'Fusion | Fusion Docs'.
+The assertion is retried until page returns 'Fusion | Fusion Docs', therefore await page.title() returns "Fusion | Fusion Docs" and passes without needing to retry the assertion.
