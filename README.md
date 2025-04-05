@@ -61,3 +61,5 @@ await expect(page).toHaveTitle('Fusion | Fusion Docs');
 await expect(await page.title()).toBe('Fusion | Fusion Docs');
 ```
 The assertion is retried until **page** returns 'Fusion | Fusion Docs', therefore **await page.title()** returns "Fusion | Fusion Docs" and passes without needing to retry the assertion.
+
+Realized I didn't understand the purpose of having a Base class with methods that already exist on the Page class built into Playwright, so I removed it. Initial thinking was that because getTitle() and navigate() methods were included in the example tests when installing Playwright that they must be a good idea / best practice. I'll believe it when I see it!
