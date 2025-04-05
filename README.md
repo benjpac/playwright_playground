@@ -10,6 +10,7 @@ www.stokefusion.com
 Not sure why there's a linting error on page imports in base.ts.
 
 Narrow down inconsistency with await on certain assertions. await expect() vs expect(await page.title())
+***figured it out in stoke-fusion-docs project. see notes below**
 
 ## qaplayground notes
 
@@ -30,9 +31,9 @@ https://qaplayground.dev/apps/verify-account/
 More playright vscode extension fun. Test explorer gives great control on running tests in various modes (run, debug, and continuous which I have not tested yet)
 
 Realized that success page requires keyboard event to trigger success page. 
-* fill() just adds the value. 
-* type() works.
-* press() works.
+* **fill()** just adds the value. 
+* **type()** works.
+* **press()** works.
 
 Mixed thoughts on test recorder. 
 
@@ -51,7 +52,7 @@ This fails:
 await expect(await page.title()).toBe('Fusion | Fusion Docs');
 await expect(page).toHaveTitle('Fusion | Fusion Docs')
 ```
-page.title() returns "Fusion Docs" before the page is done loading. Retrying assert on string "Fusion Docs" toBe "Fusion | Fusion Docs" will always fail.
+**page.title()** returns "Fusion Docs" before the page is done loading. Retrying assert on string "Fusion Docs" toBe "Fusion | Fusion Docs" will always fail.
 
 
 This passes:
@@ -59,4 +60,4 @@ This passes:
 await expect(page).toHaveTitle('Fusion | Fusion Docs');
 await expect(await page.title()).toBe('Fusion | Fusion Docs');
 ```
-The assertion is retried until page returns 'Fusion | Fusion Docs', therefore await page.title() returns "Fusion | Fusion Docs" and passes without needing to retry the assertion.
+The assertion is retried until **page** returns 'Fusion | Fusion Docs', therefore **await page.title()** returns "Fusion | Fusion Docs" and passes without needing to retry the assertion.
