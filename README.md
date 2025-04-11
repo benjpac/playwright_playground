@@ -63,4 +63,18 @@ The assertion is retried until **page** returns 'Fusion | Fusion Docs', therefor
 
 Realized I didn't understand the purpose of having a Base class with methods that already exist on the Page class built into Playwright, so I removed it. Initial thinking was that because getTitle() and navigate() methods were included in the example tests when installing Playwright that they must be a good idea / best practice. I will use built in page.title() and page.goto() unless I see a reason not to.
 
-Working on failure in sidebar.spec.ts > Fusion > collapse and expand, last assertion after expanding. 
+**aria-snapshots**
+
+https://playwright.dev/docs/aria-snapshots
+
+Playing with aria-snapshots in sidebar.spec.ts > Fusion > collapse and expand.
+
+Using toMatchAriaSnapshot assertion does not fail if aria snapshot contains additional data. It just checks if expected is contained in snapshot. I'm not sure how useful this is for sidebar testing. Documentation says snapshot testing is ideal for regression testing outputs that rarely change, broad structural checks for complex UI components, and UI testing of whole pages and components. The sidebar would probably rarely change structure, but I think there's a better way to test it. Maybe using a fixture would work better? 
+
+locator.ariaSnapshot().toBe(exact aria match) can be used for exact matches. 
+
+Using toMatchAriaSnapshot (and probably the equivilent for screenshots) for specific sets of visual regression tests that aren't part of CI/CD might be a good approach. Running tests with the --update-snapshots flag will update snapshots that did not match. Matching snapshots will not be updated.
+```
+npx playwright test --update-snapshots
+```
+

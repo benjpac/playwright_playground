@@ -10,6 +10,32 @@ test.describe('Sidebar Tests', () => {
         await expect(page).toHaveTitle('Fusion | Fusion Docs');
     });
 
+    test('initial aria snapshot', async({ page }) => {
+      expect(await page.getByRole('navigation', { name: 'Docs sidebar' })).toMatchAriaSnapshot(`
+        - navigation "Docs sidebar":
+          - list:
+            - listitem:
+              - link "Fusion" [expanded]
+              - button "Collapse sidebar category 'Fusion'"
+              - list:
+                - listitem:
+                  - link "Parts"
+                  - button "Expand sidebar category 'Parts'"
+                - listitem:
+                  - link "Inventory"
+                  - button "Expand sidebar category 'Inventory'"
+                - listitem:
+                  - link "Workflows"
+                  - button "Expand sidebar category 'Workflows'"
+                - listitem:
+                  - link "Work Plans"
+                  - button "Expand sidebar category 'Work Plans'"
+                - listitem:
+                  - link "Organization"
+                  - button "Expand sidebar category 'Organization'"
+        `);            
+    })    
+
     test.describe('Fusion', () => {
         test('menu link text', async({ sidebar }) => {
             await expect(sidebar.fusion).toHaveText('Fusion')
@@ -19,32 +45,9 @@ test.describe('Sidebar Tests', () => {
             await expect(sidebar.fusion).toHaveCSS('color', 'rgb(46, 133, 85)')
         })
 
-        test.fixme('collapse and expand', async({ sidebar }) => {
-          expect(await sidebar.getSidebar()).toMatchAriaSnapshot(`
-            - navigation "Docs sidebar":
-              - list:
-                - listitem:
-                  - link "Fusion" [expanded]
-                  - button "Collapse sidebar category 'Fusion'"
-                  - list:
-                    - listitem:
-                      - link "Parts"
-                      - button "Expand sidebar category 'Parts'"
-                    - listitem:
-                      - link "Inventory"
-                      - button "Expand sidebar category 'Inventory'"
-                    - listitem:
-                      - link "Workflows"
-                      - button "Expand sidebar category 'Workflows'"
-                    - listitem:
-                      - link "Work Plans"
-                      - button "Expand sidebar category 'Work Plans'"
-                    - listitem:
-                      - link "Organization"
-                      - button "Expand sidebar category 'Organization'"
-            `);
+        test.only('collapse and expand', async({ page, sidebar }) => {
           await sidebar.collapse('Fusion')
-          expect(await sidebar.getSidebar()).toMatchAriaSnapshot(`
+          expect(await page.getByRole('navigation', { name: 'Docs sidebar' }).ariaSnapshot()).toBe(`
             - navigation "Docs sidebar":
               - list:
                 - listitem:
@@ -53,8 +56,7 @@ test.describe('Sidebar Tests', () => {
             `);
           await sidebar.expand('Fusion')
 
-          // fails after expanding
-          expect(await sidebar.getSidebar()).toMatchAriaSnapshot(`
+          expect(await page.getByRole('navigation', { name: 'Docs sidebar' })).toMatchAriaSnapshot(`
           - navigation "Docs sidebar":
               - list:
               - listitem:

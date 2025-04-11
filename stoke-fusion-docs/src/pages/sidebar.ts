@@ -1,4 +1,5 @@
 import type { Page, Locator } from '@playwright/test';
+import { expect } from '@playwright/test';
 
 export class Sidebar {
     readonly page: Page;
@@ -21,14 +22,11 @@ export class Sidebar {
 
   async collapse(category: String) {
     await this.page.getByRole('button', { name: `Collapse sidebar category \'${category}\'` }).click();
+    expect
   }
 
   async expand(category: String) {
     await this.page.getByRole('button', { name: `Expand sidebar category \'${category}\'` }).click();
-  }
-
-  async getSidebar() {
-    return this.page.getByRole('navigation', { name: 'Docs sidebar' });
   }
 
 }
