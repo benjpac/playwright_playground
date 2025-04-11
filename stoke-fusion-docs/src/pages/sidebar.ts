@@ -19,4 +19,16 @@ export class Sidebar {
     this.organization = page.getByRole('link', { name: 'Organization', exact: true });
   }
 
+  async collapse(category: String) {
+    await this.page.getByRole('button', { name: `Collapse sidebar category \'${category}\'` }).click();
+  }
+
+  async expand(category: String) {
+    await this.page.getByRole('button', { name: `Expand sidebar category \'${category}\'` }).click();
+  }
+
+  async getSidebar() {
+    return this.page.getByRole('navigation', { name: 'Docs sidebar' });
+  }
+
 }
