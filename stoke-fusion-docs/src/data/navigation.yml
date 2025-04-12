@@ -1,12 +1,12 @@
 - navigation "Docs sidebar":
   - list:
     - listitem:
-      - link "Fusion" [expanded]
+      - link "Fusion"
         url: "/fusion"
       - button "Collapse sidebar category 'Fusion'"
       - list:
         - listitem:
-          - link "Parts" [expanded]
+          - link "Parts"
             url: "/fusion/parts"
           - button "Collapse sidebar category 'Parts'"
           - list:
@@ -14,7 +14,7 @@
               - link "Parts Library"
                 url: "/fusion/parts/library"
             - listitem:
-              - link "Part" [expanded]
+              - link "Part"
                 url: "/fusion/parts/part"
               - button "Collapse sidebar category 'Part'"
               - list:
@@ -31,7 +31,7 @@
                   - link "Part Inventory"
                     url: "/fusion/parts/part/inventory"
             - listitem:
-              - link "Part Creation" [expanded]
+              - link "Part Creation"
                 url: "/fusion/parts/creation"
               - button "Collapse sidebar category 'Part Creation'"
               - list:
@@ -42,7 +42,7 @@
                   - link "Importing an eBOM"
                     url: "/fusion/parts/creation/import-ebom"
             - listitem:
-              - link "Part Actions" [expanded]
+              - link "Part Actions"
                 url: "/fusion/parts/actions"
               - button "Collapse sidebar category 'Part Actions'"
               - list:
@@ -59,7 +59,7 @@
                   - link "Deleting Parts"
                     url: "/fusion/parts/actions/delete"
             - listitem:
-              - link "Data Connectors" [expanded]
+              - link "Data Connectors"
                 url: "/fusion/parts/data-connectors"
               - button "Collapse sidebar category 'Data Connectors'"
               - list:
@@ -70,15 +70,15 @@
                   - link "Durolabs Data Connector"
                     url: "/fusion/parts/data-connectors/durolabs"
                 - listitem:
-                  - link "SolidWorks PDM Data Connector"
+                  - link "SolidWorks PDM Data Conenctor"
                     url: "/fusion/parts/data-connectors/solidworks-pdm"
         - listitem:
-          - link "Inventory" [expanded]
+          - link "Inventory"
             url: "/fusion/inventory"
           - button "Collapse sidebar category 'Inventory'"
           - list:
             - listitem:
-              - link "Locations" [expanded]
+              - link "Locations"
                 url: "/fusion/inventory/locations"
               - button "Collapse sidebar category 'Locations'"
               - list:
@@ -92,7 +92,7 @@
               - link "Inventory Library"
                 url: "/fusion/inventory/library"
             - listitem:
-              - link "Inventory Item" [expanded]
+              - link "Inventory Item"
                 url: "/fusion/inventory/item"
               - button "Collapse sidebar category 'Inventory Item'"
               - list:
@@ -106,15 +106,15 @@
                   - link "Related Items"
                     url: "/fusion/inventory/item/related-items"
             - listitem:
-              - link "Creating Inventory" [expanded]
+              - link "Creating Inventory"
                 url: "/fusion/inventory/creating"
               - button "Collapse sidebar category 'Creating Inventory'"
               - list:
                 - listitem:
-                  - link "Sending and Receiving Inventory"
+                  - link "Sending and Recieving Inventory"
                     url: "/fusion/inventory/creating/send-receive"
             - listitem:
-              - link "Inventory Actions" [expanded]
+              - link "Inventory Actions"
                 url: "/fusion/inventory/actions"
               - button "Collapse sidebar category 'Inventory Actions'"
               - list:
@@ -134,7 +134,7 @@
                   - link "Mark this Part as a Planned"
                     url: "/fusion/inventory/actions/mark-planned"
                 - listitem:
-                  - link "Permanently Delete an Item"
+                  - link "Permantently Delete an Item"
                     url: "/fusion/inventory/actions/delete"
                 - listitem:
                   - link "Create QR-Encoded Label"
@@ -149,7 +149,7 @@
               - link "Kitting"
                 url: "/fusion/inventory/kitting"
         - listitem:
-          - link "Workflows" [expanded]
+          - link "Workflows"
             url: "/fusion/workflows"
           - button "Collapse sidebar category 'Workflows'"
           - list:
@@ -160,7 +160,7 @@
               - link "Workflow"
                 url: "/fusion/workflows/workflow"
             - listitem:
-              - link "Templates" [expanded]
+              - link "Templates"
                 url: "/fusion/workflows/templates"
               - button "Collapse sidebar category 'Templates'"
               - list:
@@ -177,7 +177,7 @@
                   - link "Empty Workflow"
                     url: "/fusion/workflows/templates/empty"
             - listitem:
-              - link "Settings" [expanded]
+              - link "Settings"
                 url: "/fusion/workflows/settings"
               - button "Collapse sidebar category 'Settings'"
               - list:
@@ -194,7 +194,7 @@
                   - link "Workflow Activity"
                     url: "/fusion/workflows/settings/activity"
             - listitem:
-              - link "Cards" [expanded]
+              - link "Cards"
                 url: "/fusion/workflows/cards"
               - button "Collapse sidebar category 'Cards'"
               - list:
@@ -202,7 +202,7 @@
                   - link "Workflow Card"
                     url: "/fusion/workflows/cards/card"
                 - listitem:
-                  - link "Card Actions" [expanded]
+                  - link "Card Actions"
                     url: "/fusion/workflows/cards/actions"
                   - button "Collapse sidebar category 'Card Actions'"
                   - list:
@@ -225,7 +225,7 @@
                   - link "Related Items"
                     url: "/fusion/workflows/cards/related-items"
             - listitem:
-              - link "Workflow Actions" [expanded]
+              - link "Workflow Actions"
                 url: "/fusion/workflows/workflow-actions"
               - button "Collapse sidebar category 'Workflow Actions'"
               - list:
@@ -239,7 +239,7 @@
                   - link "Create Label"
                     url: "/fusion/workflows/workflow-actions/create-label"
         - listitem:
-          - link "Work Plans" [expanded]
+          - link "Work Plans"
             url: "/fusion/work-plans"
           - button "Collapse sidebar category 'Work Plans'"
           - list:
@@ -265,7 +265,7 @@
               - link "Archiving a Work Plan Run"
                 url: "/fusion/work-plans/archive-run"
         - listitem:
-          - link "Organization" [expanded]
+          - link "Organization"
             url: "/fusion/organization"
           - button "Collapse sidebar category 'Organization'"
           - list:

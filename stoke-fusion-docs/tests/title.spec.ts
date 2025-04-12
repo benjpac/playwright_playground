@@ -1,0 +1,211 @@
+await page.goto('https://app.stokefusion.com/help/category/fusion/index.html');
+
+
+await expect(page.getByLabel('Docs sidebar')).toMatchAriaSnapshot(`
+    - navigation "Docs sidebar":
+      - list:
+        - listitem:
+          - link "Fusion" [expanded]
+          - button "Collapse sidebar category 'Fusion'"
+          - list:
+            - listitem:
+              - link "Parts" [expanded]
+              - button "Collapse sidebar category 'Parts'"
+              - list:
+                - listitem:
+                  - link "Parts Library"
+                - listitem:
+                  - link "Part" [expanded]
+                  - button "Collapse sidebar category 'Part'"
+                  - list:
+                    - listitem:
+                      - link "Field Groups"
+                    - listitem:
+                      - link "Related Items"
+                    - listitem:
+                      - link "Engineering BOM"
+                    - listitem:
+                      - link "Part Inventory"
+                - listitem:
+                  - link "Part Creation" [expanded]
+                  - button "Collapse sidebar category 'Part Creation'"
+                  - list:
+                    - listitem:
+                      - link "Creating a Part Manually"
+                    - listitem:
+                      - link "Importing an eBOM"
+                - listitem:
+                  - link "Part Actions" [expanded]
+                  - button "Collapse sidebar category 'Part Actions'"
+                  - list:
+                    - listitem:
+                      - link "Instant Assembly"
+                    - listitem:
+                      - link "Create a Part in a Workflow"
+                    - listitem:
+                      - link "Print Part Label"
+                    - listitem:
+                      - link "Deleting Parts"
+                - listitem:
+                  - link "Data Connectors" [expanded]
+                  - button "Collapse sidebar category 'Data Connectors'"
+                  - list:
+                    - listitem:
+                      - link "Teamcenter Data Connector"
+                    - listitem:
+                      - link "Durolabs Data Connector"
+                    - listitem:
+                      - link "SolidWorks PDM Data Conenctor"
+            - listitem:
+              - link "Inventory" [expanded]
+              - button "Collapse sidebar category 'Inventory'"
+              - list:
+                - listitem:
+                  - link "Locations" [expanded]
+                  - button "Collapse sidebar category 'Locations'"
+                  - list:
+                    - listitem:
+                      - link "Addresses"
+                    - listitem:
+                      - link "Inventory Locations"
+                - listitem:
+                  - link "Inventory Library"
+                - listitem:
+                  - link "Inventory Item" [expanded]
+                  - button "Collapse sidebar category 'Inventory Item'"
+                  - list:
+                    - listitem:
+                      - link "Custom Field Groups"
+                    - listitem:
+                      - link "As-built BOM"
+                    - listitem:
+                      - link "Related Items"
+                - listitem:
+                  - link "Creating Inventory" [expanded]
+                  - button "Collapse sidebar category 'Creating Inventory'"
+                  - list:
+                    - listitem:
+                      - link "Sending and Recieving Inventory"
+                - listitem:
+                  - link "Inventory Actions" [expanded]
+                  - button "Collapse sidebar category 'Inventory Actions'"
+                  - list:
+                    - listitem:
+                      - link "Changing out a Part"
+                    - listitem:
+                      - link "Changing a Part Revision"
+                    - listitem:
+                      - link "Duplicate an Inventory Item"
+                    - listitem:
+                      - link "Scrap this Item"
+                    - listitem:
+                      - link "Mark this Part as a Planned"
+                    - listitem:
+                      - link "Permantently Delete an Item"
+                    - listitem:
+                      - link "Create QR-Encoded Label"
+                    - listitem:
+                      - link "Create Workflow Card"
+                    - listitem:
+                      - link "Add Inventory Item"
+                - listitem:
+                  - link "Kitting"
+            - listitem:
+              - link "Workflows" [expanded]
+              - button "Collapse sidebar category 'Workflows'"
+              - list:
+                - listitem:
+                  - link "Workflows"
+                - listitem:
+                  - link "Workflow"
+                - listitem:
+                  - link "Templates" [expanded]
+                  - button "Collapse sidebar category 'Templates'"
+                  - list:
+                    - listitem:
+                      - link "Kanban Workflow"
+                    - listitem:
+                      - link "NCR Workflow"
+                    - listitem:
+                      - link "Xero Workflow"
+                    - listitem:
+                      - link "Empty Workflow"
+                - listitem:
+                  - link "Settings" [expanded]
+                  - button "Collapse sidebar category 'Settings'"
+                  - list:
+                    - listitem:
+                      - link "Custom Fields"
+                    - listitem:
+                      - link "Automations"
+                    - listitem:
+                      - link "Workflow Members"
+                    - listitem:
+                      - link "Workflow Activity"
+                - listitem:
+                  - link "Cards" [expanded]
+                  - button "Collapse sidebar category 'Cards'"
+                  - list:
+                    - listitem:
+                      - link "Workflow Card"
+                    - listitem:
+                      - link "Card Actions" [expanded]
+                      - button "Collapse sidebar category 'Card Actions'"
+                      - list:
+                        - listitem:
+                          - link "Record Time"
+                        - listitem:
+                          - link "Duplicate Card"
+                        - listitem:
+                          - link "Add Comments"
+                        - listitem:
+                          - link "Create Label"
+                        - listitem:
+                          - link "Archive Card"
+                    - listitem:
+                      - link "Related Items"
+                - listitem:
+                  - link "Workflow Actions" [expanded]
+                  - button "Collapse sidebar category 'Workflow Actions'"
+                  - list:
+                    - listitem:
+                      - link "Add a Card"
+                    - listitem:
+                      - link "Viewing a Workflow"
+                    - listitem:
+                      - link "Create Label"
+            - listitem:
+              - link "Work Plans" [expanded]
+              - button "Collapse sidebar category 'Work Plans'"
+              - list:
+                - listitem:
+                  - link "Work Plans"
+                - listitem:
+                  - link "Work Plan"
+                - listitem:
+                  - link "Creating a New Work Plan"
+                - listitem:
+                  - link "Starting Work Plan Run"
+                - listitem:
+                  - link "Executing a Work Plan Run"
+                - listitem:
+                  - link "Completing a Work Plan Run"
+                - listitem:
+                  - link "Archiving a Work Plan Run"
+            - listitem:
+              - link "Organization" [expanded]
+              - button "Collapse sidebar category 'Organization'"
+              - list:
+                - listitem:
+                  - link "Users"
+                - listitem:
+                  - link "Categories"
+                - listitem:
+                  - link "Data Connectors"
+                - listitem:
+                  - link "Connected Applications"
+                - listitem:
+                  - link "Billing"
+                - listitem:
+                  - link "Organization"
+    `);
