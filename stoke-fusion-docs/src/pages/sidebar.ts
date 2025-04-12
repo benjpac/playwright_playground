@@ -1,5 +1,4 @@
 import type { Page, Locator } from '@playwright/test';
-import { expect } from '@playwright/test';
 
 export class Sidebar {
     readonly page: Page;
@@ -9,6 +8,7 @@ export class Sidebar {
     readonly workflows: Locator;
     readonly workPlans: Locator;
     readonly organization: Locator;
+    readonly container: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -18,15 +18,37 @@ export class Sidebar {
     this.workflows = page.getByRole('link', { name: 'Workflows', exact: true });
     this.workPlans = page.getByRole('link', { name: 'Work Plans', exact: true });
     this.organization = page.getByRole('link', { name: 'Organization', exact: true });
+    this.container = page.getByRole('navigation', { name: 'Docs sidebar' });
   }
 
-  async collapse(category: String) {
-    await this.page.getByRole('button', { name: `Collapse sidebar category \'${category}\'` }).click();
-    expect
+  async getMenuToggleButton(category: String) {
+    const button = await this.page.getByRole('button', { name: `sidebar category \'${category}\'` });
+    if (!button) {
+      throw new Error(`Menu toggle button not found for category: ${category}`);
+    }
+    return button;
   }
 
-  async expand(category: String) {
-    await this.page.getByRole('button', { name: `Expand sidebar category \'${category}\'` }).click();
+  async expandMenu(category: string) {
+    const button = await this.getMenuToggleButton(category);
+    const ariaLabel = await button.getAttribute('aria-label');
+
+    if (!ariaLabel || !ariaLabel.includes('Expand')) {
+      throw new Error(`aria-label="${ariaLabel}"`);
+    }
+
+    await button.click();
+  }
+
+  async collapseMenu(category: string) {
+    const button = await this.getMenuToggleButton(category);
+    const ariaLabel = await button.getAttribute('aria-label');
+
+    if (!ariaLabel || !ariaLabel.includes('Collapse')) {
+      throw new Error(`aria-label="${ariaLabel}"`);
+    }
+
+    await button.click();
   }
 
 }

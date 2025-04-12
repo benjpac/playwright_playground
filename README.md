@@ -75,6 +75,6 @@ locator.ariaSnapshot().toBe(exact aria match) can be used for exact matches.
 
 Using toMatchAriaSnapshot (and probably the equivilent for screenshots) for specific sets of visual regression tests that aren't part of CI/CD might be a good approach. Running tests with the --update-snapshots flag will update snapshots that did not match. Matching snapshots will not be updated.
 ```
-npx playwright test --update-snapshots
+npx playwright test --update-snapshots --update-source-method=overwrite
 ```
 
