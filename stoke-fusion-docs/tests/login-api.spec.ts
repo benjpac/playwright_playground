@@ -1,6 +1,4 @@
-// import { test } from '../pages/base';
-import { expect } from '@playwright/test';
-import { test } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 test.describe('Login Page API', () => {
     // test.fixme('404 on app-build-manifest.json on page load', async ({ page }) => {

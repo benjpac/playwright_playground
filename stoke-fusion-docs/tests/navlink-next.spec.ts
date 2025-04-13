@@ -1,11 +1,10 @@
-import { test } from '../src/pages/base';
-import { expect } from '@playwright/test';
+import { test, expect } from '../src/fixtures/base';
 
 test.beforeEach(async ({ page }) => {
     await page.goto('/help/category/fusion/index.html');
 });
 
-// test the next button functionality and get href data for navigation.yml
+// test the next button functionality and get href data for '../src/data/navigation.json'
 test('navlink--next', async ({ main }) => {
 
     let pageCount = 1;

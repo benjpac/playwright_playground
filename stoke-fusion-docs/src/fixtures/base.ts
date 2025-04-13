@@ -1,8 +1,8 @@
 import { test as base } from '@playwright/test';
-import { Footer } from './footer';
-import { Header } from './header';
-import { Main } from './main';
-import { Sidebar } from './sidebar';
+import { Footer } from '../pages/footer';
+import { Header } from '../pages/header';
+import { Main } from '../pages/main';
+import { Sidebar } from '../pages/sidebar';
 
 type MyFixtures = {
     footer: Footer,
@@ -25,3 +25,5 @@ export const test = base.extend<MyFixtures>({
         await use(new Sidebar(page));
     }
 });
+
+export { expect } from '@playwright/test';

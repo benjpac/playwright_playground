@@ -1,14 +1,14 @@
 import type { Page, Locator } from '@playwright/test';
 
 export class Sidebar {
-    readonly page: Page;
-    readonly fusion: Locator;
-    readonly parts: Locator;
-    readonly inventory: Locator;
-    readonly workflows: Locator;
-    readonly workPlans: Locator;
-    readonly organization: Locator;
-    readonly container: Locator;
+  readonly page: Page;
+  readonly fusion: Locator;
+  readonly parts: Locator;
+  readonly inventory: Locator;
+  readonly workflows: Locator;
+  readonly workPlans: Locator;
+  readonly organization: Locator;
+  readonly container: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -21,11 +21,12 @@ export class Sidebar {
     this.container = page.getByRole('navigation', { name: 'Docs sidebar' });
   }
 
-  async getMenuToggleButton(category: String) {
+  async getMenuToggleButton(category: string): Promise<Locator> {
     const button = await this.page.getByRole('button', { name: `sidebar category \'${category}\'` });
     if (!button) {
       throw new Error(`Menu toggle button not found for category: ${category}`);
     }
+
     return button;
   }
 
