@@ -1,13 +1,13 @@
 import { test as base } from '@playwright/test';
 import { Footer } from './footer';
 import { Header } from './header';
-import { MainContainer } from './main-container';
+import { Main } from './main';
 import { Sidebar } from './sidebar';
 
 type MyFixtures = {
     footer: Footer,
     header: Header,
-    mainContainer: MainContainer,
+    main: Main,
     sidebar: Sidebar,
 }
 
@@ -18,8 +18,8 @@ export const test = base.extend<MyFixtures>({
     header: async ({ page }, use) => {
         await use(new Header(page));
     },
-    mainContainer: async ({ page }, use) => {
-        await use(new MainContainer(page));
+    main: async ({ page }, use) => {
+        await use(new Main(page));
     },
     sidebar: async ({ page }, use) => {
         await use(new Sidebar(page));

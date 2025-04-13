@@ -2,37 +2,37 @@
   - list:
     - listitem:
       - link "Fusion"
-        url: "/fusion"
+        url: "/category/fusion"
       - button "Collapse sidebar category 'Fusion'"
       - list:
         - listitem:
           - link "Parts"
-            url: "/fusion/parts"
+            url: "/category/parts"
           - button "Collapse sidebar category 'Parts'"
           - list:
             - listitem:
               - link "Parts Library"
-                url: "/fusion/parts/library"
+                url: "/fusion/parts/parts-library"
             - listitem:
               - link "Part"
-                url: "/fusion/parts/part"
+                url: "/fusion/parts/part/"
               - button "Collapse sidebar category 'Part'"
               - list:
                 - listitem:
                   - link "Field Groups"
-                    url: "/fusion/parts/part/field-groups"
+                    url: "/fusion/parts/part/part-custom-fields"
                 - listitem:
                   - link "Related Items"
-                    url: "/fusion/parts/part/related-items"
+                    url: "/fusion/parts/part/part-related-tabs"
                 - listitem:
                   - link "Engineering BOM"
-                    url: "/fusion/parts/part/engineering-bom"
+                    url: "/fusion/parts/part/part-ebom"
                 - listitem:
                   - link "Part Inventory"
-                    url: "/fusion/parts/part/inventory"
+                    url: "/fusion/parts/part/part-inventory"
             - listitem:
               - link "Part Creation"
-                url: "/fusion/parts/creation"
+                url: "/fusion/parts/creation/"
               - button "Collapse sidebar category 'Part Creation'"
               - list:
                 - listitem:
@@ -40,82 +40,82 @@
                     url: "/fusion/parts/creation/manual"
                 - listitem:
                   - link "Importing an eBOM"
-                    url: "/fusion/parts/creation/import-ebom"
+                    url: "/fusion/parts/creation/import"
             - listitem:
               - link "Part Actions"
-                url: "/fusion/parts/actions"
+                url: "/fusion/parts/part-actions/"
               - button "Collapse sidebar category 'Part Actions'"
               - list:
                 - listitem:
                   - link "Instant Assembly"
-                    url: "/fusion/parts/actions/instant-assembly"
+                    url: "/fusion/parts/part-actions/instant-assembly"
                 - listitem:
                   - link "Create a Part in a Workflow"
-                    url: "/fusion/parts/actions/create-in-workflow"
+                    url: "/fusion/parts/part-actions/create-in-workflow"
                 - listitem:
                   - link "Print Part Label"
-                    url: "/fusion/parts/actions/print-label"
+                    url: "/fusion/parts/part-actions/print-label"
                 - listitem:
                   - link "Deleting Parts"
-                    url: "/fusion/parts/actions/delete"
+                    url: "/fusion/parts/part-actions/delete"
             - listitem:
               - link "Data Connectors"
-                url: "/fusion/parts/data-connectors"
+                url: "/fusion/parts/connectors/"
               - button "Collapse sidebar category 'Data Connectors'"
               - list:
                 - listitem:
                   - link "Teamcenter Data Connector"
-                    url: "/fusion/parts/data-connectors/teamcenter"
+                    url: "/fusion/parts/connectors/team-center"
                 - listitem:
                   - link "Durolabs Data Connector"
-                    url: "/fusion/parts/data-connectors/durolabs"
+                    url: "/fusion/parts/connectors/durolabs"
                 - listitem:
                   - link "SolidWorks PDM Data Conenctor"
-                    url: "/fusion/parts/data-connectors/solidworks-pdm"
+                    url: "/fusion/parts/connectors/solidworks"
         - listitem:
           - link "Inventory"
-            url: "/fusion/inventory"
+            url: "/category/inventory"
           - button "Collapse sidebar category 'Inventory'"
           - list:
             - listitem:
               - link "Locations"
-                url: "/fusion/inventory/locations"
+                url: "/fusion/inventory/locations/"
               - button "Collapse sidebar category 'Locations'"
               - list:
                 - listitem:
                   - link "Addresses"
-                    url: "/fusion/inventory/locations/addresses"
+                    url: "/fusion/inventory/locations/address-create"
                 - listitem:
                   - link "Inventory Locations"
-                    url: "/fusion/inventory/locations/inventory"
+                    url: "/fusion/inventory/locations/location"
             - listitem:
               - link "Inventory Library"
                 url: "/fusion/inventory/library"
             - listitem:
               - link "Inventory Item"
-                url: "/fusion/inventory/item"
+                url: "/fusion/inventory/Item/"
               - button "Collapse sidebar category 'Inventory Item'"
               - list:
                 - listitem:
                   - link "Custom Field Groups"
-                    url: "/fusion/inventory/item/custom-fields"
+                    url: "/fusion/inventory/Item/field-groups"
                 - listitem:
                   - link "As-built BOM"
-                    url: "/fusion/inventory/item/as-built-bom"
+                    url: "/fusion/inventory/Item/abom"
                 - listitem:
                   - link "Related Items"
-                    url: "/fusion/inventory/item/related-items"
+                    url: "/fusion/inventory/Item/related-items"
             - listitem:
               - link "Creating Inventory"
-                url: "/fusion/inventory/creating"
+                url: "/fusion/inventory/creation/"
               - button "Collapse sidebar category 'Creating Inventory'"
               - list:
                 - listitem:
                   - link "Sending and Recieving Inventory"
-                    url: "/fusion/inventory/creating/send-receive"
+                    url: "/fusion/inventory/creation/send-and-receive"
             - listitem:
               - link "Inventory Actions"
-                url: "/fusion/inventory/actions"
+                url: "/fusion/inventory/actions/"
               - button "Collapse sidebar category 'Inventory Actions'"
               - list:
                 - listitem:
@@ -123,7 +123,7 @@
                     url: "/fusion/inventory/actions/change-part"
                 - listitem:
                   - link "Changing a Part Revision"
-                    url: "/fusion/inventory/actions/change-revision"
+                    url: "/fusion/inventory/actions/change-part-revision"
                 - listitem:
                   - link "Duplicate an Inventory Item"
                     url: "/fusion/inventory/actions/duplicate"
@@ -132,158 +132,158 @@
                     url: "/fusion/inventory/actions/scrap"
                 - listitem:
                   - link "Mark this Part as a Planned"
-                    url: "/fusion/inventory/actions/mark-planned"
+                    url: "/fusion/inventory/actions/mark-as-planned"
                 - listitem:
                   - link "Permantently Delete an Item"
                     url: "/fusion/inventory/actions/delete"
                 - listitem:
                   - link "Create QR-Encoded Label"
-                    url: "/fusion/inventory/actions/qr-label"
+                    url: "/fusion/inventory/actions/create-label"
                 - listitem:
                   - link "Create Workflow Card"
-                    url: "/fusion/inventory/actions/workflow-card"
+                    url: "/fusion/inventory/actions/create-in-workflow"
                 - listitem:
                   - link "Add Inventory Item"
-                    url: "/fusion/inventory/actions/add"
+                    url: "/fusion/inventory/actions/create-manual"
             - listitem:
               - link "Kitting"
-                url: "/fusion/inventory/kitting"
+                url: "/fusion/inventory/kitting/"
         - listitem:
           - link "Workflows"
-            url: "/fusion/workflows"
+            url: "/category/workflows"
           - button "Collapse sidebar category 'Workflows'"
           - list:
             - listitem:
               - link "Workflows"
-                url: "/fusion/workflows/list"
+                url: "/fusion/Workflows/"
             - listitem:
               - link "Workflow"
-                url: "/fusion/workflows/workflow"
+                url: "/fusion/Workflows/workfow"
             - listitem:
               - link "Templates"
-                url: "/fusion/workflows/templates"
+                url: "/fusion/Workflows/templates/"
               - button "Collapse sidebar category 'Templates'"
               - list:
                 - listitem:
                   - link "Kanban Workflow"
-                    url: "/fusion/workflows/templates/kanban"
+                    url: "/fusion/Workflows/templates/kanban"
                 - listitem:
                   - link "NCR Workflow"
-                    url: "/fusion/workflows/templates/ncr"
+                    url: "/fusion/Workflows/templates/non-conformance-report"
                 - listitem:
                   - link "Xero Workflow"
-                    url: "/fusion/workflows/templates/xero"
+                    url: "/fusion/Workflows/templates/xero-integrated-board"
                 - listitem:
                   - link "Empty Workflow"
-                    url: "/fusion/workflows/templates/empty"
+                    url: "/fusion/Workflows/templates/empty"
             - listitem:
               - link "Settings"
-                url: "/fusion/workflows/settings"
+                url: "/fusion/Workflows/settings/"
               - button "Collapse sidebar category 'Settings'"
               - list:
                 - listitem:
                   - link "Custom Fields"
-                    url: "/fusion/workflows/settings/custom-fields"
+                    url: "/fusion/Workflows/settings/custom-fields"
                 - listitem:
                   - link "Automations"
-                    url: "/fusion/workflows/settings/automations"
+                    url: "/fusion/Workflows/settings/automations"
                 - listitem:
                   - link "Workflow Members"
-                    url: "/fusion/workflows/settings/members"
+                    url: "/fusion/Workflows/settings/members"
                 - listitem:
                   - link "Workflow Activity"
-                    url: "/fusion/workflows/settings/activity"
+                    url: "/fusion/Workflows/settings/activity"
             - listitem:
               - link "Cards"
-                url: "/fusion/workflows/cards"
+                url: "/fusion/Workflows/cards/"
               - button "Collapse sidebar category 'Cards'"
               - list:
                 - listitem:
                   - link "Workflow Card"
-                    url: "/fusion/workflows/cards/card"
+                    url: "/fusion/Workflows/cards/card"
                 - listitem:
                   - link "Card Actions"
-                    url: "/fusion/workflows/cards/actions"
+                    url: "/fusion/Workflows/cards/actions/"
                   - button "Collapse sidebar category 'Card Actions'"
                   - list:
                     - listitem:
                       - link "Record Time"
-                        url: "/fusion/workflows/cards/actions/record-time"
+                        url: "/fusion/Workflows/cards/actions/record-time"
                     - listitem:
                       - link "Duplicate Card"
-                        url: "/fusion/workflows/cards/actions/duplicate"
+                        url: "/fusion/Workflows/cards/actions/duplicate"
                     - listitem:
                       - link "Add Comments"
-                        url: "/fusion/workflows/cards/actions/comments"
+                        url: "/fusion/Workflows/cards/actions/comment"
                     - listitem:
                       - link "Create Label"
-                        url: "/fusion/workflows/cards/actions/create-label"
+                        url: "/fusion/Workflows/cards/actions/label"
                     - listitem:
                       - link "Archive Card"
-                        url: "/fusion/workflows/cards/actions/archive"
+                        url: "/fusion/Workflows/cards/actions/archive"
                 - listitem:
                   - link "Related Items"
-                    url: "/fusion/workflows/cards/related-items"
+                    url: "/fusion/Workflows/cards/relationships/"
             - listitem:
               - link "Workflow Actions"
-                url: "/fusion/workflows/workflow-actions"
+                url: "/fusion/Workflows/actions/"
               - button "Collapse sidebar category 'Workflow Actions'"
               - list:
                 - listitem:
                   - link "Add a Card"
-                    url: "/fusion/workflows/workflow-actions/add-card"
+                    url: "/fusion/Workflows/actions/add"
                 - listitem:
                   - link "Viewing a Workflow"
-                    url: "/fusion/workflows/workflow-actions/view"
+                    url: "/fusion/Workflows/actions/view"
                 - listitem:
                   - link "Create Label"
-                    url: "/fusion/workflows/workflow-actions/create-label"
+                    url: "/fusion/Workflows/actions/label"
         - listitem:
           - link "Work Plans"
-            url: "/fusion/work-plans"
+            url: "/category/work-plans"
           - button "Collapse sidebar category 'Work Plans'"
           - list:
             - listitem:
               - link "Work Plans"
-                url: "/fusion/work-plans/list"
+                url: "/fusion/Work Plans/"
             - listitem:
               - link "Work Plan"
-                url: "/fusion/work-plans/plan"
+                url: "/fusion/Work Plans/work-plan"
             - listitem:
               - link "Creating a New Work Plan"
-                url: "/fusion/work-plans/create"
+                url: "/fusion/Work Plans/creating-a-new-work-plan"
             - listitem:
               - link "Starting Work Plan Run"
-                url: "/fusion/work-plans/start-run"
+                url: "/fusion/Work Plans/starting-work-plan-run"
             - listitem:
               - link "Executing a Work Plan Run"
-                url: "/fusion/work-plans/execute-run"
+                url: "/fusion/Work Plans/executing-a-work-plan-run"
             - listitem:
               - link "Completing a Work Plan Run"
-                url: "/fusion/work-plans/complete-run"
+                url: "/fusion/Work Plans/completing-a-work-plan-run"
             - listitem:
               - link "Archiving a Work Plan Run"
-                url: "/fusion/work-plans/archive-run"
+                url: "/fusion/Work Plans/archiving-a-work-plan-run"
         - listitem:
           - link "Organization"
-            url: "/fusion/organization"
+            url: "/category/organization"
           - button "Collapse sidebar category 'Organization'"
           - list:
             - listitem:
               - link "Users"
-                url: "/fusion/organization/users"
+                url: "/fusion/Organization/Users"
             - listitem:
               - link "Categories"
-                url: "/fusion/organization/categories"
+                url: "/fusion/Organization/Categories"
             - listitem:
               - link "Data Connectors"
-                url: "/fusion/organization/data-connectors"
+                url: "/fusion/Organization/Data Connectors"
             - listitem:
               - link "Connected Applications"
-                url: "/fusion/organization/connected-apps"
+                url: "/fusion/Organization/Connected Applications"
             - listitem:
               - link "Billing"
-                url: "/fusion/organization/billing"
+                url: "/fusion/Organization/Billing"
             - listitem:
               - link "Organization"
-                url: "/fusion/organization/settings"
+                url: "/fusion/Organization/"
