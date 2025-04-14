@@ -82,9 +82,8 @@ Moved 'base.ts' fixture to 'src/fixtures/' and created 'navigation.ts' fixture.
 
 Exporting 'expect' in every fixture so imports come from the same file, since # of spec files is > # of fixtures.
 
-Notes on Youtube videos I watched yesterday:
 "How to wait for a specific API response in your Playwright end-to-end tests"
-https://youtu.be/5CER0dKweyw?si=Bf7-gVVQXTM95Yw3 --- I used this strategy on my last project in Cypress and it worked well. Does not apply to this project.
+https://youtu.be/5CER0dKweyw?si=Bf7-gVVQXTM95Yw3 --- I used this strategy on my last project in Cypress when working with many asynchronous XMLHttpRequest. No reason to use it for this project.
 
 "Add accessibility checks to your Playwright end-to-end tests"
 https://youtu.be/cs5-Kk9nQDA?si=Hnqebq1UYbYjNNc4 --- emulates chrome lighthouse accessibility tests. will add this to navigation.spec.ts. 
