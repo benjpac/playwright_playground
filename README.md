@@ -89,7 +89,9 @@ https://youtu.be/5CER0dKweyw?si=Bf7-gVVQXTM95Yw3 --- I used this strategy on my 
 "Add accessibility checks to your Playwright end-to-end tests"
 https://youtu.be/cs5-Kk9nQDA?si=Hnqebq1UYbYjNNc4 --- emulates chrome lighthouse accessibility tests. will add this to navigation.spec.ts. 
 
+"Avoid flaky end-to-end tests due to poorly hydrated Frontends with Playwright's toPass()"
+https://youtu.be/8g7FvoRToGo?si=ppK4-D3KT-A0lJtf
 
 Trying to figure out best practice for locator error handling. 
 
-if (!locator) is used in pages/sidebar.ts, if (count === 0) is used in pages/main.ts, but I'm not thrilled with either solution.
+if (!locator) is used in pages/sidebar.ts, if (count === 0) is used in pages/main.ts, but I'm not thrilled with either solution. Try experimenting with toPass().
