@@ -1,7 +1,5 @@
 # playwright_playground
-First attempt using Playwright.
-
-Testing various methods of writing tests to validate best practices in playwright docs. 
+First attempt using Playwright. Using this README for notes.
 
 ## stoke-space-pom
 
@@ -49,7 +47,7 @@ https://app.stokefusion.com/help/category/fusion/index.html
 
 This fails:
 ```
-await expect(await page.title()).toBe('Fusion | Fusion Docs');
+expect(await page.title()).toBe('Fusion | Fusion Docs');
 ```
 **page.title()** returns "Fusion Docs" before the page is done loading. Retrying assert on string "Fusion Docs" toBe "Fusion | Fusion Docs" will always fail.
 
@@ -57,9 +55,9 @@ await expect(await page.title()).toBe('Fusion | Fusion Docs');
 This passes:
 ```
 await expect(page).toHaveTitle('Fusion | Fusion Docs');
-await expect(await page.title()).toBe('Fusion | Fusion Docs');
+expect(await page.title()).toBe('Fusion | Fusion Docs');
 ```
-The assertion is retried until **page** returns 'Fusion | Fusion Docs', therefore **await page.title()** returns "Fusion | Fusion Docs" and passes without needing to retry the assertion.
+The assertion is retried until **page** returns the title 'Fusion | Fusion Docs', therefore **await page.title()** returns "Fusion | Fusion Docs" and passes without needing to retry the assertion.
 
 Realized I didn't understand the purpose of having a Base class with methods that already exist on the Page class built into Playwright, so I removed it. Initial thinking was that because getTitle() and navigate() methods were included in the example tests when installing Playwright that they must be a good idea / best practice. I will use built in page.title() and page.goto() unless I see a reason not to.
 
@@ -78,12 +76,17 @@ Using toMatchAriaSnapshot (and probably the equivilent for screenshots) for spec
 npx playwright test --update-snapshots --update-source-method=overwrite
 ```
 
+https://playwright.dev/docs/test-fixtures
+
 Moved 'base.ts' fixture to 'src/fixtures/' and created 'navigation.ts' fixture.
 
 Exporting 'expect' in every fixture so imports come from the same file, since # of spec files is > # of fixtures.
 
 "How to wait for a specific API response in your Playwright end-to-end tests"
 https://youtu.be/5CER0dKweyw?si=Bf7-gVVQXTM95Yw3 --- I used this strategy on my last project in Cypress when working with many asynchronous XMLHttpRequest. No reason to use it for this project.
+
+"How to run your Playwright end-to-end tests in SloMo"
+https://youtu.be/T7O4D78E2fY?si=qflaONTY6ftTTUfe --- might come in handy for debugging in UI mode.
 
 "Add accessibility checks to your Playwright end-to-end tests"
 https://youtu.be/cs5-Kk9nQDA?si=Hnqebq1UYbYjNNc4 --- emulates chrome lighthouse accessibility tests. will add this to navigation.spec.ts. 
@@ -93,4 +96,8 @@ https://youtu.be/8g7FvoRToGo?si=ppK4-D3KT-A0lJtf
 
 Trying to figure out best practice for locator error handling. 
 
-if (!locator) is used in pages/sidebar.ts, if (count === 0) is used in pages/main.ts, but I'm not thrilled with either solution. Try experimenting with toPass().
+if (!locator) is used in pages/sidebar.ts
+
+if (count === 0) is used in pages/main.ts
+
+I'm not thrilled with either solution. Try experimenting with toPass().
