@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Navigation', () => {
-    test.only('h1', async ({ page, main, flattenedLinks }) => {
+    test('h1', async ({ page, main, flattenedLinks }) => {
         await page.goto('/help/category/fusion/index.html')
         for (const link of flattenedLinks) {
             console.log(link);
