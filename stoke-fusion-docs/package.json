@@ -9,5 +9,8 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.51.1"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.10.1"
   }
 }

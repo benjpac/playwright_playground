@@ -12,7 +12,7 @@ test.describe('Main Container', () => {
 
             await test.step(`go to: ${link.url}`, async () => {
                 await page.goto(`/help${link.url}/index.html`);
-                expect(page.url()).toBe(`${baseURL}/help${link.url}/index.html`);
+                await expect(page).toHaveURL(`${baseURL}/help${link.url}/index.html`);
             })
 
             await test.step(`h1 is: ${link.text}`, async () => {
