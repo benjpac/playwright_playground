@@ -2,448 +2,455 @@
   "navigation": [
     {
       "type": "category",
-      "text": "Parts",
-      "url": "/category/parts",
+      "text": "Fusion",
+      "url": "/category/fusion",
       "children": [
         {
-          "type": "link",
-          "text": "Parts Library",
-          "url": "/fusion/parts/parts-library"
-        },
-        {
-          "type": "section",
-          "text": "Part",
-          "url": "/fusion/parts/part/",
-          "children": [
-            {
-              "type": "link",
-              "text": "Field Groups",
-              "url": "/fusion/parts/part/part-custom-fields"
-            },
-            {
-              "type": "link",
-              "text": "Related Items",
-              "url": "/fusion/parts/part/part-related-tabs"
-            },
-            {
-              "type": "link",
-              "text": "Engineering BOM",
-              "url": "/fusion/parts/part/part-ebom"
-            },
-            {
-              "type": "link",
-              "text": "Part Inventory",
-              "url": "/fusion/parts/part/part-inventory"
-            }
-          ]
-        },
-        {
-          "type": "section",
-          "text": "Part Creation",
-          "url": "/fusion/parts/creation/",
-          "children": [
-            {
-              "type": "link",
-              "text": "Creating a Part Manually",
-              "url": "/fusion/parts/creation/manual"
-            },
-            {
-              "type": "link",
-              "text": "Importing an eBOM",
-              "url": "/fusion/parts/creation/import"
-            }
-          ]
-        },
-        {
-          "type": "section",
-          "text": "Part Actions",
-          "url": "/fusion/parts/part-actions/",
-          "children": [
-            {
-              "type": "link",
-              "text": "Instant Assembly",
-              "url": "/fusion/parts/part-actions/instant-assembly"
-            },
-            {
-              "type": "link",
-              "text": "Create a Part in a Workflow",
-              "url": "/fusion/parts/part-actions/create-in-workflow"
-            },
-            {
-              "type": "link",
-              "text": "Print Part Label",
-              "url": "/fusion/parts/part-actions/print-label"
-            },
-            {
-              "type": "link",
-              "text": "Deleting Parts",
-              "url": "/fusion/parts/part-actions/delete"
-            }
-          ]
-        },
-        {
-          "type": "section",
-          "text": "Data Connectors",
-          "url": "/fusion/parts/connectors/",
-          "children": [
-            {
-              "type": "link",
-              "text": "Teamcenter Data Connector",
-              "url": "/fusion/parts/connectors/team-center"
-            },
-            {
-              "type": "link",
-              "text": "Durolabs Data Connector",
-              "url": "/fusion/parts/connectors/durolabs"
-            },
-            {
-              "type": "link",
-              "text": "SolidWorks PDM Data Connector",
-              "url": "/fusion/parts/connectors/solidworks"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "text": "Inventory",
-      "url": "/category/inventory",
-      "children": [
-        {
-          "type": "section",
-          "text": "Locations",
-          "url": "/fusion/inventory/locations/",
-          "children": [
-            {
-              "type": "link",
-              "text": "Addresses",
-              "url": "/fusion/inventory/locations/address-create"
-            },
-            {
-              "type": "link",
-              "text": "Inventory Locations",
-              "url": "/fusion/inventory/locations/location"
-            }
-          ]
-        },
-        {
-          "type": "link",
-          "text": "Inventory Library",
-          "url": "/fusion/inventory/library"
-        },
-        {
-          "type": "section",
-          "text": "Inventory Item",
-          "url": "/fusion/inventory/Item/",
-          "children": [
-            {
-              "type": "link",
-              "text": "Custom Field Groups",
-              "url": "/fusion/inventory/Item/field-groups"
-            },
-            {
-              "type": "link",
-              "text": "As-built BOM",
-              "url": "/fusion/inventory/Item/abom"
-            },
-            {
-              "type": "link",
-              "text": "Related Items",
-              "url": "/fusion/inventory/Item/related-items"
-            }
-          ]
-        },
-        {
-          "type": "section",
-          "text": "Creating Inventory",
-          "url": "/fusion/inventory/creation/",
-          "children": [
-            {
-              "type": "link",
-              "text": "Sending and Receiving Inventory",
-              "url": "/fusion/inventory/creation/send-and-receive"
-            }
-          ]
-        },
-        {
-          "type": "section",
-          "text": "Inventory Actions",
-          "url": "/fusion/inventory/actions/",
-          "children": [
-            {
-              "type": "link",
-              "text": "Changing out a Part",
-              "url": "/fusion/inventory/actions/change-part"
-            },
-            {
-              "type": "link",
-              "text": "Changing a Part Revision",
-              "url": "/fusion/inventory/actions/change-part-revision"
-            },
-            {
-              "type": "link",
-              "text": "Duplicate an Inventory Item",
-              "url": "/fusion/inventory/actions/duplicate"
-            },
-            {
-              "type": "link",
-              "text": "Scrap this Item",
-              "url": "/fusion/inventory/actions/scrap"
-            },
-            {
-              "type": "link",
-              "text": "Mark this Part as Planned",
-              "url": "/fusion/inventory/actions/mark-as-planned"
-            },
-            {
-              "type": "link",
-              "text": "Permanently Delete an Item",
-              "url": "/fusion/inventory/actions/delete"
-            },
-            {
-              "type": "link",
-              "text": "Create QR-Encoded Label",
-              "url": "/fusion/inventory/actions/create-label"
-            },
-            {
-              "type": "link",
-              "text": "Create Workflow Card",
-              "url": "/fusion/inventory/actions/create-in-workflow"
-            },
-            {
-              "type": "link",
-              "text": "Add Inventory Item",
-              "url": "/fusion/inventory/actions/create-manual"
-            }
-          ]
-        },
-        {
-          "type": "link",
-          "text": "Kitting",
-          "url": "/fusion/inventory/kitting/"
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "text": "Workflows",
-      "url": "/category/workflows",
-      "children": [
-        {
-          "type": "link",
-          "text": "Workflows",
-          "url": "/fusion/Workflows/"
-        },
-        {
-          "type": "link",
-          "text": "Workflow",
-          "url": "/fusion/Workflows/workflow"
-        },
-        {
-          "type": "section",
-          "text": "Templates",
-          "url": "/fusion/Workflows/templates/",
-          "children": [
-            {
-              "type": "link",
-              "text": "Kanban Workflow",
-              "url": "/fusion/Workflows/templates/kanban"
-            },
-            {
-              "type": "link",
-              "text": "NCR Workflow",
-              "url": "/fusion/Workflows/templates/non-conformance-report"
-            },
-            {
-              "type": "link",
-              "text": "Xero Workflow",
-              "url": "/fusion/Workflows/templates/xero-integrated-board"
-            },
-            {
-              "type": "link",
-              "text": "Empty Workflow",
-              "url": "/fusion/Workflows/templates/empty"
-            }
-          ]
-        },
-        {
-          "type": "section",
-          "text": "Settings",
-          "url": "/fusion/Workflows/settings/",
-          "children": [
-            {
-              "type": "link",
-              "text": "Custom Fields",
-              "url": "/fusion/Workflows/settings/custom-fields"
-            },
-            {
-              "type": "link",
-              "text": "Automations",
-              "url": "/fusion/Workflows/settings/automations"
-            },
-            {
-              "type": "link",
-              "text": "Workflow Members",
-              "url": "/fusion/Workflows/settings/members"
-            },
-            {
-              "type": "link",
-              "text": "Workflow Activity",
-              "url": "/fusion/Workflows/settings/activity"
-            }
-          ]
-        },
-        {
-          "type": "section",
-          "text": "Cards",
-          "url": "/fusion/Workflows/cards/",
-          "children": [
-            {
-              "type": "link",
-              "text": "Workflow Card",
-              "url": "/fusion/Workflows/cards/card"
-            },
-            {
-              "type": "section",
-              "text": "Card Actions",
-              "url": "/fusion/Workflows/cards/actions/",
-              "children": [
-                {
-                  "type": "link",
-                  "text": "Record Time",
-                  "url": "/fusion/Workflows/cards/actions/record-time"
-                },
-                {
-                  "type": "link",
-                  "text": "Duplicate Card",
-                  "url": "/fusion/Workflows/cards/actions/duplicate"
-                },
-                {
-                  "type": "link",
-                  "text": "Add Comments",
-                  "url": "/fusion/Workflows/cards/actions/comment"
-                },
-                {
-                  "type": "link",
-                  "text": "Create Label",
-                  "url": "/fusion/Workflows/cards/actions/label"
-                },
-                {
-                  "type": "link",
-                  "text": "Archive Card",
-                  "url": "/fusion/Workflows/cards/actions/archive"
-                }
-              ]
-            },
-            {
-              "type": "link",
-              "text": "Related Items",
-              "url": "/fusion/Workflows/cards/relationships/"
-            }
-          ]
-        },
-        {
-          "type": "section",
-          "text": "Workflow Actions",
-          "url": "/fusion/Workflows/actions/",
-          "children": [
-            {
-              "type": "link",
-              "text": "Add a Card",
-              "url": "/fusion/Workflows/actions/add"
-            },
-            {
-              "type": "link",
-              "text": "Viewing a Workflow",
-              "url": "/fusion/Workflows/actions/view"
-            },
-            {
-              "type": "link",
-              "text": "Create Label",
-              "url": "/fusion/Workflows/actions/label"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "text": "Work Plans",
-      "url": "/category/work-plans",
-      "children": [
-        {
-          "type": "link",
-          "text": "Work Plans",
-          "url": "/fusion/Work Plans/"
-        },
-        {
-          "type": "link",
-          "text": "Work Plan",
-          "url": "/fusion/Work Plans/work-plan"
-        },
-        {
-          "type": "link",
-          "text": "Creating a New Work Plan",
-          "url": "/fusion/Work Plans/creating-a-new-work-plan"
-        },
-        {
-          "type": "link",
-          "text": "Starting Work Plan Run",
-          "url": "/fusion/Work Plans/starting-work-plan-run"
-        },
-        {
-          "type": "link",
-          "text": "Executing a Work Plan Run",
-          "url": "/fusion/Work Plans/executing-a-work-plan-run"
-        },
-        {
-          "type": "link",
-          "text": "Completing a Work Plan Run",
-          "url": "/fusion/Work Plans/completing-a-work-plan-run"
-        },
-        {
-          "type": "link",
-          "text": "Archiving a Work Plan Run",
-          "url": "/fusion/Work Plans/archiving-a-work-plan-run"
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "text": "Organization",
-      "url": "/category/organization",
-      "children": [
-        {
-          "type": "link",
-          "text": "Users",
-          "url": "/fusion/Organization/Users"
-        },
-        {
-          "type": "link",
-          "text": "Categories",
-          "url": "/fusion/Organization/Categories"
-        },
-        {
-          "type": "link",
-          "text": "Data Connectors",
-          "url": "/fusion/Organization/Data Connectors"
-        },
-        {
-          "type": "link",
-          "text": "Connected Applications",
-          "url": "/fusion/Organization/Connected Applications"
-        },
-        {
-          "type": "link",
-          "text": "Billing",
-          "url": "/fusion/Organization/Billing"
-        },
-        {
-          "type": "link",
-          "text": "Organization",
-          "url": "/fusion/Organization/"
-        }
+        "type": "category",
+        "text": "Parts",
+        "url": "/category/parts",
+        "children": [
+          {
+            "type": "link",
+            "text": "Parts Library",
+            "url": "/fusion/parts/parts-library"
+          },
+          {
+            "type": "section",
+            "text": "Part",
+            "url": "/fusion/parts/part",
+            "children": [
+              {
+                "type": "link",
+                "text": "Field Groups",
+                "url": "/fusion/parts/part/part-custom-fields"
+              },
+              {
+                "type": "link",
+                "text": "Related Items",
+                "url": "/fusion/parts/part/part-related-tabs"
+              },
+              {
+                "type": "link",
+                "text": "Engineering BOM",
+                "url": "/fusion/parts/part/part-ebom"
+              },
+              {
+                "type": "link",
+                "text": "Part Inventory",
+                "url": "/fusion/parts/part/part-inventory"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "text": "Part Creation",
+            "url": "/fusion/parts/creation",
+            "children": [
+              {
+                "type": "link",
+                "text": "Creating a Part Manually",
+                "url": "/fusion/parts/creation/manual"
+              },
+              {
+                "type": "link",
+                "text": "Importing an eBOM",
+                "url": "/fusion/parts/creation/import"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "text": "Part Actions",
+            "url": "/fusion/parts/part-actions",
+            "children": [
+              {
+                "type": "link",
+                "text": "Instant Assembly",
+                "url": "/fusion/parts/part-actions/instant-assembly"
+              },
+              {
+                "type": "link",
+                "text": "Create a Part in a Workflow",
+                "url": "/fusion/parts/part-actions/create-in-workflow"
+              },
+              {
+                "type": "link",
+                "text": "Print Part Label",
+                "url": "/fusion/parts/part-actions/print-label"
+              },
+              {
+                "type": "link",
+                "text": "Deleting Parts",
+                "url": "/fusion/parts/part-actions/delete"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "text": "Data Connectors",
+            "url": "/fusion/parts/connectors",
+            "children": [
+              {
+                "type": "link",
+                "text": "Teamcenter Data Connector",
+                "url": "/fusion/parts/connectors/team-center"
+              },
+              {
+                "type": "link",
+                "text": "Durolabs Data Connector",
+                "url": "/fusion/parts/connectors/durolabs"
+              },
+              {
+                "type": "link",
+                "text": "SolidWorks PDM Data Conenctor",
+                "url": "/fusion/parts/connectors/solidworks"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "text": "Inventory",
+        "url": "/category/inventory",
+        "children": [
+          {
+            "type": "section",
+            "text": "Locations",
+            "url": "/fusion/inventory/locations",
+            "children": [
+              {
+                "type": "link",
+                "text": "Addresses",
+                "url": "/fusion/inventory/locations/address-create"
+              },
+              {
+                "type": "link",
+                "text": "Inventory Locations",
+                "url": "/fusion/inventory/locations/location"
+              }
+            ]
+          },
+          {
+            "type": "link",
+            "text": "Inventory Library",
+            "url": "/fusion/inventory/library"
+          },
+          {
+            "type": "section",
+            "text": "Inventory Item",
+            "url": "/fusion/inventory/Item",
+            "children": [
+              {
+                "type": "link",
+                "text": "Custom Field Groups",
+                "url": "/fusion/inventory/Item/field-groups"
+              },
+              {
+                "type": "link",
+                "text": "As-built BOM",
+                "url": "/fusion/inventory/Item/abom"
+              },
+              {
+                "type": "link",
+                "text": "Related Items",
+                "url": "/fusion/inventory/Item/related-items"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "text": "Creating Inventory",
+            "url": "/fusion/inventory/creation",
+            "children": [
+              {
+                "type": "link",
+                "text": "Sending and Recieving Inventory",
+                "url": "/fusion/inventory/creation/send-and-receive"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "text": "Inventory Actions",
+            "url": "/fusion/inventory/actions",
+            "children": [
+              {
+                "type": "link",
+                "text": "Changing out a Part",
+                "url": "/fusion/inventory/actions/change-part"
+              },
+              {
+                "type": "link",
+                "text": "Changing a Part Revision",
+                "url": "/fusion/inventory/actions/change-part-revision"
+              },
+              {
+                "type": "link",
+                "text": "Duplicate an Inventory Item",
+                "url": "/fusion/inventory/actions/duplicate"
+              },
+              {
+                "type": "link",
+                "text": "Scrap this Item",
+                "url": "/fusion/inventory/actions/scrap"
+              },
+              {
+                "type": "link",
+                "text": "Mark this Part as a Planned",
+                "url": "/fusion/inventory/actions/mark-as-planned"
+              },
+              {
+                "type": "link",
+                "text": "Permantently Delete an Item",
+                "url": "/fusion/inventory/actions/delete"
+              },
+              {
+                "type": "link",
+                "text": "Create QR-Encoded Label",
+                "url": "/fusion/inventory/actions/create-label"
+              },
+              {
+                "type": "link",
+                "text": "Create Workflow Card",
+                "url": "/fusion/inventory/actions/create-in-workflow"
+              },
+              {
+                "type": "link",
+                "text": "Add Inventory Item",
+                "url": "/fusion/inventory/actions/create-manual"
+              }
+            ]
+          },
+          {
+            "type": "link",
+            "text": "Kitting",
+            "url": "/fusion/inventory/kitting"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "text": "Workflows",
+        "url": "/category/workflows",
+        "children": [
+          {
+            "type": "link",
+            "text": "Workflows",
+            "url": "/fusion/Workflows"
+          },
+          {
+            "type": "link",
+            "text": "Workflow",
+            "url": "/fusion/Workflows/workfow"
+          },
+          {
+            "type": "section",
+            "text": "Workflow Templates",
+            "url": "/fusion/Workflows/templates",
+            "children": [
+              {
+                "type": "link",
+                "text": "Kanban Workflow Template",
+                "url": "/fusion/Workflows/templates/kanban"
+              },
+              {
+                "type": "link",
+                "text": "Non-Conformance Report (NCR) Workflow Template",
+                "url": "/fusion/Workflows/templates/non-conformance-report"
+              },
+              {
+                "type": "link",
+                "text": "Xero-Integrated Workflow Template",
+                "url": "/fusion/Workflows/templates/xero-integrated-board"
+              },
+              {
+                "type": "link",
+                "text": "Empty Workflow Template",
+                "url": "/fusion/Workflows/templates/empty"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "text": "Workflow Settings",
+            "url": "/fusion/Workflows/settings",
+            "children": [
+              {
+                "type": "link",
+                "text": "Custom Workflow Fields",
+                "url": "/fusion/Workflows/settings/custom-fields"
+              },
+              {
+                "type": "link",
+                "text": "Workflow Automations",
+                "url": "/fusion/Workflows/settings/automations"
+              },
+              {
+                "type": "link",
+                "text": "Workflow Members",
+                "url": "/fusion/Workflows/settings/members"
+              },
+              {
+                "type": "link",
+                "text": "Workflow Activity",
+                "url": "/fusion/Workflows/settings/activity"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "text": "Workflow Cards",
+            "url": "/fusion/Workflows/cards",
+            "children": [
+              {
+                "type": "link",
+                "text": "Workflow Card",
+                "url": "/fusion/Workflows/cards/card"
+              },
+              {
+                "type": "section",
+                "text": "Workflow Card Actions",
+                "url": "/fusion/Workflows/cards/actions",
+                "children": [
+                  {
+                    "type": "link",
+                    "text": "Record Work Time",
+                    "url": "/fusion/Workflows/cards/actions/record-time"
+                  },
+                  {
+                    "type": "link",
+                    "text": "Duplicate Workflow Card",
+                    "url": "/fusion/Workflows/cards/actions/duplicate"
+                  },
+                  {
+                    "type": "link",
+                    "text": "Add Comments",
+                    "url": "/fusion/Workflows/cards/actions/comment"
+                  },
+                  {
+                    "type": "link",
+                    "text": "Create a QR-Enconded Label for a Workflow Card",
+                    "url": "/fusion/Workflows/cards/actions/label"
+                  },
+                  {
+                    "type": "link",
+                    "text": "Archive a Workflow Card",
+                    "url": "/fusion/Workflows/cards/actions/archive"
+                  }
+                ]
+              },
+              {
+                "type": "link",
+                "text": "Relate a Workflow Card to other Fusion Items!",
+                "url": "/fusion/Workflows/cards/relationships"
+              }
+            ]
+          },
+          {
+            "type": "section",
+            "text": "Workflow Actions",
+            "url": "/fusion/Workflows/actions",
+            "children": [
+              {
+                "type": "link",
+                "text": "Add a Workflow Card",
+                "url": "/fusion/Workflows/actions/add"
+              },
+              {
+                "type": "link",
+                "text": "Viewing a Workflow",
+                "url": "/fusion/Workflows/actions/view"
+              },
+              {
+                "type": "link",
+                "text": "Create a QR-Encoded Label for a Workflow",
+                "url": "/fusion/Workflows/actions/label"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "text": "Work Plans",
+        "url": "/category/work-plans",
+        "children": [
+          {
+            "type": "link",
+            "text": "Work Plans",
+            "url": "/fusion/Work%20Plans"
+          },
+          {
+            "type": "link",
+            "text": "Work Plan",
+            "url": "/fusion/Work%20Plans/work-plan"
+          },
+          {
+            "type": "link",
+            "text": "Creating a New Work Plan",
+            "url": "/fusion/Work%20Plans/creating-a-new-work-plan"
+          },
+          {
+            "type": "link",
+            "text": "Starting Work Plan Run",
+            "url": "/fusion/Work%20Plans/starting-work-plan-run"
+          },
+          {
+            "type": "link",
+            "text": "Executing a Work Plan Run",
+            "url": "/fusion/Work%20Plans/executing-a-work-plan-run"
+          },
+          {
+            "type": "link",
+            "text": "Completing a Work Plan Run",
+            "url": "/fusion/Work%20Plans/completing-a-work-plan-run"
+          },
+          {
+            "type": "link",
+            "text": "Archiving a Work Plan Run",
+            "url": "/fusion/Work%20Plans/archiving-a-work-plan-run"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "text": "Organization",
+        "url": "/category/organization",
+        "children": [
+          {
+            "type": "link",
+            "text": "Users",
+            "url": "/fusion/Organization/Users"
+          },
+          {
+            "type": "link",
+            "text": "Categories",
+            "url": "/fusion/Organization/Categories"
+          },
+          {
+            "type": "link",
+            "text": "Data Connectors",
+            "url": "/fusion/Organization/Data%20Connectors"
+          },
+          {
+            "type": "link",
+            "text": "Connected Applications",
+            "url": "/fusion/Organization/Connected%20Applications"
+          },
+          {
+            "type": "link",
+            "text": "Billing",
+            "url": "/fusion/Organization/Billing"
+          },
+          {
+            "type": "link",
+            "text": "Organization",
+            "url": "/fusion/Organization"
+          }
+        ]
+      }
       ]
     }
   ]

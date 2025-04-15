@@ -22,11 +22,7 @@ export class Sidebar {
   }
 
   async getMenuToggleButton(category: string): Promise<Locator> {
-    const locator = await this.page.getByRole('button', { name: `sidebar category \'${category}\'` });
-    if (await locator.count() === 0) {
-      throw new Error(`"${locator}" not found for category: "${category}"`);
-    }
-
+    const locator = this.page.getByRole('button', { name: `sidebar category \'${category}\'` });
     return locator;
   }
 

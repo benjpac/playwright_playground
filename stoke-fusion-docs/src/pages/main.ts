@@ -13,10 +13,6 @@ export class Main {
 
   async getH1(title: string): Promise<Locator> {
     const locator = this.page.getByRole('heading', { name: `${title}`, exact: true });
-    if (await locator.count() === 0) {
-      const h1 = await this.page.locator('h1').textContent()
-      throw new Error(`"${locator}" not found. Found page.locator('h1') with text: "${h1}"`);
-    }
     return locator;
   }
 

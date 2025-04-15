@@ -1,44 +1,26 @@
 # playwright_playground
-First attempt using Playwright. Using this README for notes.
+First attempt using Playwright. 
+
+Using this README for notes.
 
 ## stoke-space-pom
-
 www.stokefusion.com
 
-Not sure why there's a linting error on page imports in base.ts.
-
-Narrow down inconsistency with await on certain assertions. await expect() vs expect(await page.title())
-***figured it out in stoke-fusion-docs project. see notes below**
-
 ## qaplayground
-
 https://qaplayground.dev/#apps
 
 ### dynamic-table.spec.ts 
-
 https://qaplayground.dev/apps/dynamic-table/
 
-Messed with playwright vscode extension and 'record new' feature. Very cool! 
-
-Because it is a dynamically sized table, the toMatchAriaSnapshot assertion fails due to mismatched size when recording.
-
 ### verify-account.spec.ts
-
 https://qaplayground.dev/apps/verify-account/
-
-More playright vscode extension fun. Test explorer gives great control on running tests in various modes (run, debug, and continuous which I have not tested yet)
 
 Realized that success page requires keyboard event to trigger success page. 
 * **fill()** just adds the value. 
 * **type()** works.
 * **press()** works.
 
-Mixed thoughts on test recorder. 
-
-I end up spending more time debugging code I wouldn't have written in the first place. I do learn things in the process, so it's still somewhat useful from an educational standpoint. 
-
 ## stoke-fusion-docs
-
 https://app.stokefusion.com/
 
 Use this link to bypass login:
@@ -59,7 +41,7 @@ expect(await page.title()).toBe('Fusion | Fusion Docs');
 ```
 The assertion is retried until **page** returns the title 'Fusion | Fusion Docs', therefore **await page.title()** returns "Fusion | Fusion Docs" and passes without needing to retry the assertion.
 
-Realized I didn't understand the purpose of having a Base class with methods that already exist on the Page class built into Playwright, so I removed it. Initial thinking was that because getTitle() and navigate() methods were included in the example tests when installing Playwright that they must be a good idea / best practice. I will use built in page.title() and page.goto() unless I see a reason not to.
+Initially, I created a Base class with methods like `getTitle()` and `navigate()` because these methods were included in the example tests provided during Playwright's installation. However, I later realized that these methods already exist as built-in functionalities in Playwright's `Page` class (e.g., `page.title()` and `page.goto()`). Since the Base class added unnecessary abstraction without providing additional value, I decided to remove it and rely directly on Playwright's built-in methods for simplicity and maintainability.
 
 **aria-snapshots**
 
@@ -76,28 +58,65 @@ Using toMatchAriaSnapshot (and probably the equivilent for screenshots) for spec
 npx playwright test --update-snapshots --update-source-method=overwrite
 ```
 
+Playwright's test fixtures documentation provides guidance on creating reusable test setups and managing test dependencies. Refer to it for best practices and examples:
 https://playwright.dev/docs/test-fixtures
 
 Moved 'base.ts' fixture to 'src/fixtures/' and created 'navigation.ts' fixture.
 
-Exporting 'expect' in every fixture so imports come from the same file, since # of spec files is > # of fixtures.
-
-"How to wait for a specific API response in your Playwright end-to-end tests"
-https://youtu.be/5CER0dKweyw?si=Bf7-gVVQXTM95Yw3 --- I used this strategy on my last project in Cypress when working with many asynchronous XMLHttpRequest. No reason to use it for this project.
-
 "How to run your Playwright end-to-end tests in SloMo"
-https://youtu.be/T7O4D78E2fY?si=qflaONTY6ftTTUfe --- might come in handy for debugging in UI mode.
+https://youtu.be/T7O4D78E2fY?si=qflaONTY6ftTTUfe --- can add delays between steps to emulate real user flow. might come in handy for debugging in UI mode.
 
 "Add accessibility checks to your Playwright end-to-end tests"
-https://youtu.be/cs5-Kk9nQDA?si=Hnqebq1UYbYjNNc4 --- emulates chrome lighthouse accessibility tests. will add this to navigation.spec.ts. 
+https://youtu.be/cs5-Kk9nQDA?si=Hnqebq1UYbYjNNc4 --- emulates chrome lighthouse accessibility tests. will add this to main.spec.ts. 
 
 "Avoid flaky end-to-end tests due to poorly hydrated Frontends with Playwright's toPass()"
-https://youtu.be/8g7FvoRToGo?si=ppK4-D3KT-A0lJtf
+https://youtu.be/8g7FvoRToGo?si=ppK4-D3KT-A0lJtf --- 
 
-Trying to figure out best practice for locator error handling. 
+Locators are retried before every action, so I removed if statements w/error handling, as they remove the built in retry logic and are prone to race conditions. 
 
-if (!locator) is used in pages/sidebar.ts
+Added screenshot and video on fail to playwright.config.ts. Screenshot is useful. Not sure about video yet. 
 
-if (count === 0) is used in pages/main.ts
+Added custom error message to assertion in main.spec.ts.
+```
+await test.step(`h1 is: ${link.text}`, async () => {
+    const h1 = await main.getH1(link.text)
+    // Custom error messages provide immediate context for failures, 
+    // making debugging faster without needing to analyze screenshots.
+    await expect(h1, `should it be "${await page.locator('h1').first().textContent()}"?`).toHaveText(link.text);
+})
+```
 
-I'm not thrilled with either solution. Try experimenting with toPass().
+
+
+
+
+
+## Bugs
+
+### Network Errors
+- **Login Page**: [https://app.stokefusion.com/login](https://app.stokefusion.com/login)  
+  404 [Network error]: Error: Failed to refresh tokens: user has no known organization
+
+### Typographical Errors
+- **SolidWorks PDM Data Conenctor**: [https://app.stokefusion.com/help/fusion/parts/connectors/solidworks](https://app.stokefusion.com/help/fusion/parts/connectors/solidworks)  
+  Typo: "Conenctor" should be "Connector".
+- **Sending and Recieving Inventory**: [https://app.stokefusion.com/help/fusion/inventory/creation/send-and-receive](https://app.stokefusion.com/help/fusion/inventory/creation/send-and-receive)  
+  Typo: "Recieving" should be "Receiving".
+- **Mark this Part as a Planned**: [https://app.stokefusion.com/help/fusion/inventory/actions/mark-as-planned](https://app.stokefusion.com/help/fusion/inventory/actions/mark-as-planned)  
+  Typo: "Mark this Part as a Planned" should be "Mark this Part as Planned", or something else?
+- **Permantently Delete an Item**: [https://app.stokefusion.com/help/fusion/inventory/actions/delete](https://app.stokefusion.com/help/fusion/inventory/actions/delete)  
+  Typo: "Permantently" should be "Permanently".
+
+### URL Issues
+- **Workfow**: [https://app.stokefusion.com/help/fusion/Workflows/workfow/index.html](https://app.stokefusion.com/help/fusion/Workflows/workfow/index.html)  
+  Typo: "workfow" should be "workflow" (in URL).
+- **Inconsistent URL Formatting**:  
+  Example:  
+  `/fusion/Workflows/cards/actions/record-time`  
+  `/fusion/Work%20Plans/archiving-a-work-plan-run`  
+  Suggestion: Use consistent formatting lower-case and dashes for spaces, e.g., `/fusion/work-plans/archiving-a-work-plan-run`.
+
+### Miscellaneous
+- **Punctuation in Headings**:  
+  Relate a Workflow Card to other Fusion Items!  
+  Only h1 with punctuation "!"

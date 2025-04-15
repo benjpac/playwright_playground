@@ -12,9 +12,9 @@ export const test = base.extend<NavigationFixture>({
     }, { scope: 'test' }],
 
     flattenedLinks: [async ({ navigation }, use) => {
-        const flatten = (items: Array<{ type: string; text: string; url: string; children?: typeof items }>): Array<{ url: string, text: string }> => {
+        const flatten = (items: Array<{ text: string; url: string; children?: Array<{ text: string; url: string; children?: any }> }>): Array<{ url: string, text: string }> => {
             return items.flatMap(item => [
-                ...(item.type === 'link' ? [{ url: item.url, text: item.text }] : []),
+                { url: item.url, text: item.text },
                 ...(item.children ? flatten(item.children) : [])
             ]);
         }

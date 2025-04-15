@@ -1,6 +1,6 @@
 import { test, expect } from '../src/fixtures/base';
 
-test.describe('Sidebar Tests', () => {
+test.describe('Sidebar Container', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/help/category/fusion/index.html');
   });
