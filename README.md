@@ -59,15 +59,16 @@ npx playwright test --update-snapshots --update-source-method=overwrite
 ```
 
 Playwright's test fixtures documentation provides guidance on creating reusable test setups and managing test dependencies. Refer to it for best practices and examples:
+
 https://playwright.dev/docs/test-fixtures
 
 Moved 'base.ts' fixture to 'src/fixtures/' and created 'navigation.ts' fixture.
 
 "How to run your Playwright end-to-end tests in SloMo"
-https://youtu.be/T7O4D78E2fY?si=qflaONTY6ftTTUfe --- can add delays between steps to emulate real user flow. might come in handy for debugging in UI mode.
+https://youtu.be/T7O4D78E2fY?si=qflaONTY6ftTTUfe --- Can add delays between steps to emulate real user flow. might come in handy for debugging in UI mode.
 
 "Add accessibility checks to your Playwright end-to-end tests"
-https://youtu.be/cs5-Kk9nQDA?si=Hnqebq1UYbYjNNc4 --- emulates chrome lighthouse accessibility tests. will add this to main.spec.ts. 
+https://youtu.be/cs5-Kk9nQDA?si=Hnqebq1UYbYjNNc4 --- Emulates chrome lighthouse accessibility tests. 
 
 "Avoid flaky end-to-end tests due to poorly hydrated Frontends with Playwright's toPass()"
 https://youtu.be/8g7FvoRToGo?si=ppK4-D3KT-A0lJtf --- 
@@ -85,7 +86,22 @@ await test.step(`h1 is: ${link.text}`, async () => {
     await expect(h1, `should it be "${await page.locator('h1').first().textContent()}"?`).toHaveText(link.text);
 })
 ```
+https://playwright.dev/docs/accessibility-testing --- Added accessibility test w/AxeBuilder. Just using the basic implementation to check it out.
 
+"What's new in Playwright 1.39" 
+https://www.youtube.com/watch?v=KqVuRAlOkm0 --- Use { box: true } to isolate failures slightly better. Extend expect in fixture for custom assertions.
+
+### **Performance**
+- **Choose Lighthouse** if you need to:
+  - Audit front-end performance and accessibility.
+  - Ensure fast page loads for individual users.
+- **Choose Artillery** if you need to:
+  - Test backend resilience under load.
+  - Measure API/DB performance at scale.
+
+Both Lighthouse and Artillery can and should be integrated w/Playwright. Implementation seems straight forward. Lighthouse is only for single page loads. Artillery can be wrapped around tests. 
+
+https://playwright.dev/docs/test-timeouts --- Can also use aggressive Playwright timeouts. Assertion default of 5_000ms seems long. Test timeout depends on what the test is doing.
 
 
 

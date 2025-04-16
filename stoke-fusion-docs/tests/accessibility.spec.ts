@@ -11,5 +11,6 @@ test.fixme(`accessibility`, async ({ page }) => {
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
         .analyze();
 
+    // Fails with a few color contrast issues.
     expect(accessibilityScanResults.violations).toEqual([]);
 });
