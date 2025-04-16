@@ -99,7 +99,7 @@ https://www.youtube.com/watch?v=KqVuRAlOkm0 --- Use { box: true } to isolate fai
   - Test backend resilience under load.
   - Measure API/DB performance at scale.
 
-Both Lighthouse and Artillery can and should be integrated w/Playwright. Implementation seems straight forward. Lighthouse is only for single page loads. Artillery can be wrapped around tests. 
+Both Lighthouse and Artillery can be integrated w/Playwright. Implementation seems straight forward. Lighthouse is only for single page loads. Artillery can be wrapped around tests. 
 
 https://playwright.dev/docs/test-timeouts --- Can also use aggressive Playwright timeouts. Assertion default of 5_000ms seems long. Test timeout depends on what the test is doing.
 
