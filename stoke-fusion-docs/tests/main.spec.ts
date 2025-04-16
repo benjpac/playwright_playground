@@ -12,11 +12,13 @@ test.describe('Main Container', () => {
 
             await test.step(`go to: ${link.url}`, async () => {
                 await page.goto(`/help${link.url}/index.html`);
+                // ensure we're at the correct URL
                 await expect(page).toHaveURL(`${baseURL}/help${link.url}/index.html`);
             })
 
             await test.step(`h1 is: ${link.text}`, async () => {
                 const h1 = await main.getH1(link.text)
+                // compare expected h1 text from navigation.json with the current h1 text on the page
                 await expect(h1, `should it be "${await page.locator('h1').first().textContent()}"?`).toHaveText(link.text);
             })
         }
