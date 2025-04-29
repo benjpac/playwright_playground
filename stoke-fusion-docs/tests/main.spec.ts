@@ -1,5 +1,4 @@
 import { test, expect } from '../src/fixtures/navigation'
-import fs from 'fs'
 
 test.describe('Main Container', () => {
     test.beforeAll(({ flattenedLinks }) => {
@@ -28,15 +27,6 @@ test.describe('Main Container', () => {
                 await expect(h1, `should it be "${await page.locator('h1').first().textContent()}"?`).toHaveText(link.text);
             })
 
-            await test.step('aria snapshot', async () => {
-                const ariaSnapshot = await main.content.ariaSnapshot()
-
-                const ariaSnapshotPath = `../src/data/aria-snapshots/main/${link.url}.json`
-
-                fs.writeFileSync(ariaSnapshotPath, JSON.stringify(ariaSnapshot, null, 2))
-
-                // await expect(main.content).toMatchAriaSnapshot(ariaSnapshotPath)
-            })
         }
     })
 
